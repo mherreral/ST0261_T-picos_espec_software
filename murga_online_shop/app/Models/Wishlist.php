@@ -20,6 +20,7 @@ class Wishlist extends Model
      */
     protected $fillable = [
         'name',
+        'customers',
     ];
 
     public static function validate($request)
