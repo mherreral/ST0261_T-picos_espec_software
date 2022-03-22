@@ -14,7 +14,7 @@ class Wishlist extends Model
      * $this->attributes['id'] - int - contains the product primary key (id)
      * $this->attributes['link'] - string - contains the wishlist link
      * $this->attributes['name'] - string - contains the wishlist name
-     * $this->attributes['customers'] - customer[] - contains the owners of the wishlist
+     * $this->attributes['customers'] - customer[] - contains users that share the wishlist
      * $this->attributes['items'] - item[] - contains the related items
      * $this->attributes['shoppingCart'] - shoppingCart - contains the shoppingcart associated
      */
