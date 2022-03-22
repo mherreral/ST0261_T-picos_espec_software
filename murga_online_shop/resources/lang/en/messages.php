@@ -24,5 +24,11 @@ return [
     'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.',
 
     //Wishlis
-    'wishlist.title' => 'Wishlists - LA MURGA'
+    'wishlist.title' => 'Wishlists - LA MURGA',
+    'wishlist.create' => 'Create wishlist',
+    'wishlist.name' => 'Enter wishlist name',
+    'wishlist.customers' => 'Enter wishlist collaborators emails (semicolon separated list of emails)',
+    'wishlist.liquor' => 'Liquor:',
+    'wishlist.liquor.quantity' => 'Quantity:',
+    'wishlist.toCart' => 'Add wishlist to cart',
 ];
