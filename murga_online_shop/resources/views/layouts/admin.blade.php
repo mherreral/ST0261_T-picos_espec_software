@@ -1,3 +1,6 @@
+<!-- Retrieved from
+    https://github.com/PracticalBooks/Practical-Laravel/blob/main/Chapter28/onlineStore/resources/views/layouts/admin.blade.php -->
+
 <html lang="en">
 
 <head>
