@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Item;
+use App\Models\User;
 
 class Wishlist extends Model
 {
@@ -62,8 +64,29 @@ class Wishlist extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function getCustomers()
+    {
+        return $this->customers();
+    }
+
+    public function setCustomers($customers)
+    {
+        $this->customers = $customers;
+    }
+
     public function items()
     {
         return $this->hasMany(Item::class);
+    }
+
+    public function getItems()
+    {
+        return $this->items();
+    }
+
+    public function setItems($items)
+    {
+        $this->items = $items;
     }
 }
