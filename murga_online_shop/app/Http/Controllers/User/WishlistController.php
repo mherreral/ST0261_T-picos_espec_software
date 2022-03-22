@@ -30,6 +30,7 @@ class WishlistController extends Controller
         $viewData = [];
         $wishlist = Wishlist::findOrFail($id);
         $viewData["title"] = $wishlist->getName();
+        $viewData["wishlist"] = $wishlist;
         return view('user.wishlist.index')->with("viewData", $viewData);
     }
 
@@ -45,25 +46,40 @@ class WishlistController extends Controller
         $newWishlist = new Wishlist();
         $newWishlist->setName($request->input('name'));
         $customersText = $request->input('customers');
-        $customersEmail = parseCustomerInput($customersText);
         $customers = [];
 
-        # Iterate over customers and associate them to wishlist
-        for ($i = 0; $i < count($customersEmail); $i++) {
-            # Try to find a user registered with the emails
-            try {
-                $customer = User::where('email', $customersEmail[$i])->get();
-            } catch (Exception $e) {
-                $error = "Can't find a user registered with some of the given emails";
-                return view('user.wishlist.error')->with("error", $error);
-            }
-            # Add user to customers array
-            array_push($customers, $customer);
+        if (strlen($customersText) != 0) {
+            # Add wishlist creator as owner
+            $customersEmail = parseCustomerInput($customersText);
+            $userEmail = Auth::user()->email();
+            array_push($customersEmail, $userEmail);
 
-            #$newWishlist->setCustomers($customer);
+            # Iterate over customers and associate them to wishlist
+            for ($i = 0; $i < count($customersEmail); $i++) {
+                # Try to find a user registered with the emails
+                try {
+                    $customer = User::where('email', $customersEmail[$i])->get();
+                } catch (Exception $e) {
+                    $error = "Can't find a user registered with some of the given emails";
+                    return view('user.wishlist.error')->with("error", $error);
+                }
+                # Add user to customers array
+                array_push($customers, $customer);
+
+                #$newWishlist->setCustomers($customer);
+            }
+        } else {
+            $customers = Auth::user();
         }
         $newWishlist->setCustomers($customers);
         $newWishlist->save();
         return back();
+    }
+
+    public function delete($id)
+    {
+        $wishlist = Wishlist::findOrFail($id);
+        $wishlist->delete();
+        return redirect('/');
     }
 }
