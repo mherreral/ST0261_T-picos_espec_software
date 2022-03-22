@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('description');
-            $table->int('score');
+            $table->integer('score');
             $table->unsignedBigInteger('customerId');
             $table->foreign('customerId')->references('id')->on('users');
             $table->unsignedBigInteger('liquorId');

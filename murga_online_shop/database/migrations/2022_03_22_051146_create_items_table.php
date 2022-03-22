@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->float('subtotal');
-            $table->int('quantity');
+            $table->integer('quantity');
             $table->unsignedBigInteger('liquorId');
             $table->foreign('liquorId')->references('id')->on('liquors');
             $table->unsignedBigInteger('wishlistId');
