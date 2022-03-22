@@ -24,6 +24,9 @@
                     <a class="nav-link active" href="#"> {{ __('messages.home.store') }} </a>
                     <a class="nav-link active" href="#"> {{ __('messages.home.wishlist') }} </a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
+                    @if (Auth::user() and Auth::user()->getAdmin() === 1)
+                        <a class="nav-link active" href="{{ route('admin.home.index') }}"> {{ __('messages.home.admin') }} </a>
+                    @endif
                     @guest
                         <a class="nav-link active" href="{{ route('login') }}">{{ __('messages.auth.login') }}</a>
                         <a class="nav-link active" href="{{ route('register') }}">{{ __('messages.auth.register') }}</a>
