@@ -17,4 +17,10 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', 'App\Http\Controllers\User\HomeController@index')->name("user.home.index");
+
+// Auth needed
+Route::middleware('admin')->group(function () {
+    Route::get('/admin', 'App\Http\Controllers\Admin\HomeController@index')->name('admin.home.index');
+});
+
 Route::get('locale/{locale}', 'App\Http\Controllers\LocalizationController@locale')->name('locale');
