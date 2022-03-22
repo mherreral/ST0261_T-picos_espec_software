@@ -156,4 +156,49 @@ class User extends Authenticatable
     {
         $this->attributes['admin'] = $admin;
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
+
+    public function getWishlists()
+    {
+        return $this->wishlists;
+    }
+
+    public function setWishlists($wishlists)
+    {
+        $this->wishlists = $wishlists;
+    }
+
+    public function shoppingCart()
+    {
+        return $this->hasOne(ShoppingCart::class);
+    }
+
+    public function getShoppingCart()
+    {
+        return $this->shoppingCart;
+    }
+
+    public function setShoppingCart($shoppingCart)
+    {
+        $this->shoppingCart = $shoppingCart;
+    }
 }
