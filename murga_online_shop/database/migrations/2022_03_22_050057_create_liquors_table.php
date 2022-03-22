@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('liquorType');
             $table->string('brand');
             $table->float('price');
-            $table->int('stock')->default(100);
+            $table->integer('stock')->default(100);
             $table->string('presentation');
-            $table->int('milliliters');
+            $table->integer('milliliters');
             $table->string('image')->default('/img/food.jpg');
         });
     }
