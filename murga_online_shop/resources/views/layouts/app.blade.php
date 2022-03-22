@@ -23,6 +23,17 @@
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link active" href="#"> {{ __('messages.home.store') }} </a>
                     <a class="nav-link active" href="#"> {{ __('messages.home.wishlist') }} </a>
+                    <div class="vr bg-white mx-2 d-none d-lg-block"></div>
+                    @guest
+                        <a class="nav-link active" href="{{ route('login') }}">{{ __('messages.auth.login') }}</a>
+                        <a class="nav-link active" href="{{ route('register') }}">{{ __('messages.auth.register') }}</a>
+                    @else
+                        <form id="logout" action="{{ route('logout') }}" method="POST">
+                            <a role="button" class="nav-link active"
+                                onclick="document.getElementById('logout').submit();">{{ __('messages.auth.logout') }}</a>
+                            @csrf
+                        </form>
+                    @endguest
                 </div>
             </div>
         </div>
@@ -35,8 +46,8 @@
     <div class="copyright py-4 text-center text-white">
         <div class="container">
             <small>
-                {{ __('messages.home.copyright') }} <a class="text-reset fw-bold text-decoration-none" target="_blank"
-                    href="https://twitter.com/danielgarax">
+                {{ __('messages.home.copyright') }} <a class="text-reset fw-bold text-decoration-none"
+                    target="_blank" href="https://twitter.com/danielgarax">
                     {{ __('messages.home.author') }}
                 </a>
             </small>
