@@ -19,8 +19,19 @@ Auth::routes();
 Route::get('/', 'App\Http\Controllers\User\HomeController@index')->name("user.home.index");
 
 // Auth needed
+
+//Admin
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\HomeController@index')->name('admin.home.index');
+});
+
+//User
+
+Route::middleware('auth')->group(function () {
+    Route::get('/wishlists', 'App\Http\Controllers\User\WishlistController@index')->name("user.wishlist.index");
+    Route::post('/wishlists/create', 'App\Http\Controllers\User\WishlistController@create')->name("user.wishlist.create");
+    Route::get('/wishlists/{id}', 'App\Http\Controllers\User\WishlistController@show')->name("user.wishlist.show");
+    Route::delete('/wishlists/delete/{id}', 'App\Http\Controllers\User\WishlistController@delete')->name("user.wishlist.delete");
 });
 
 Route::get('locale/{locale}', 'App\Http\Controllers\LocalizationController@locale')->name('locale');

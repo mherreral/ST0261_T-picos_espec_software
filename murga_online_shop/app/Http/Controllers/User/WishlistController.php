@@ -15,11 +15,18 @@ class WishlistController extends Controller
     {
         $viewData = [];
         $viewData["title"] = __('messages.wishlist.title');
-        $userWishlists = Auth::user()->wishlists->map(
+        $loggedUser = Auth::user();
+        $userWishlists = [];
+        foreach ($loggedUser->wishlists as $wishlist) {
+            array_push($userWishlists, $wishlist);
+            //echo $role->pivot->created_at;
+        }
+        //$userWishlists = $loggedUser->getWishlists();
+        /*$userWishlists = $loggedUser->getId()->wishlists->map(
             function ($wishlist) {
                 return $wishlist->getId;
             }
-        );
+        );*/
         $wishlists = Wishlist::with('customers')->whereIn('id', $userWishlists);
         $viewData["wishlists"] = $wishlists;
         return view('user.wishlist.index')->with("viewData", $viewData);

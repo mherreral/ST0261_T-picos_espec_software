@@ -63,7 +63,7 @@ class Wishlist extends Model
 
     public function customers()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class);
     }
 
     public function getCustomers()
