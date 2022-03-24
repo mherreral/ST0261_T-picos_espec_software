@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Wishlist;
+use App\Models\Comment;
 
 class User extends Authenticatable
 {
@@ -155,5 +157,35 @@ class User extends Authenticatable
     public function setAdmin($admin)
     {
         $this->attributes['admin'] = $admin;
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
+
+    public function getWishlists()
+    {
+        return $this->wishlists;
+    }
+
+    public function setWishlists($wishlists)
+    {
+        $this->wishlists = $wishlists;
     }
 }
