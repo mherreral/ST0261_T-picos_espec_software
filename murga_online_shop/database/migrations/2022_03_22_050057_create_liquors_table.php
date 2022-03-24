@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('liquors', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('liquorType');
+            $table->string('liquor_type');
             $table->string('brand');
             $table->float('price');
             $table->integer('stock')->default(100);
