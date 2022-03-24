@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Wishlist;
+use App\Models\Comment;
 
 class User extends Authenticatable
 {
@@ -185,20 +187,5 @@ class User extends Authenticatable
     public function setWishlists($wishlists)
     {
         $this->wishlists = $wishlists;
-    }
-
-    public function shoppingCart()
-    {
-        return $this->hasOne(ShoppingCart::class);
-    }
-
-    public function getShoppingCart()
-    {
-        return $this->shoppingCart;
-    }
-
-    public function setShoppingCart($shoppingCart)
-    {
-        $this->shoppingCart = $shoppingCart;
     }
 }
