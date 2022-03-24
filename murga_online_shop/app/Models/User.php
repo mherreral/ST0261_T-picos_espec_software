@@ -31,22 +31,22 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'birthDate',
-        'idNumber',
+        'birth_date',
+        'id_number',
         'address',
-        'phoneNumber',
+        'phone_number',
     ];
 
     public static function validate($request)
     {
         $request->validate([
-            "birthDate" => "required|date|date_format:Y/m/d",
+            "birth_date" => "required|date|date_format:Y/m/d",
             "name" => "required|string|max:255",
             "email" => "required|string|email|max:255|unique:users",
             "password" => "required|string|min:8|confirmed",
-            "idNumber" => "required|numeric",
+            "id_number" => "required|numeric",
             "address" => "required",
-            "phoneNumber" => "required|numeric",
+            "phone_number" => "required|numeric",
         ]);
     }
 
@@ -101,22 +101,22 @@ class User extends Authenticatable
 
     public function getIdNumber()
     {
-        return $this->attributes['idNumber'];
+        return $this->attributes['id_number'];
     }
 
-    public function setIdNumber($idNumber)
+    public function setIdNumber($id_number)
     {
-        $this->attributes['idNumber'] = $idNumber;
+        $this->attributes['id_number'] = $id_number;
     }
 
     public function getAvailableMoney()
     {
-        return $this->attributes['availableMoney'];
+        return $this->attributes['available_money'];
     }
 
-    public function setAvailableMoney($availableMoney)
+    public function setAvailableMoney($available_money)
     {
-        $this->attributes['availableMoney'] = $availableMoney;
+        $this->attributes['available_money'] = $available_money;
     }
 
     public function getAddress()
@@ -131,22 +131,22 @@ class User extends Authenticatable
 
     public function getBirthDate()
     {
-        return $this->attributes['birthDate'];
+        return $this->attributes['birth_date'];
     }
 
-    public function setBirthDate($birthDate)
+    public function setBirthDate($birth_date)
     {
-        $this->attributes['birthDate'] = $birthDate;
+        $this->attributes['birth_date'] = $birth_date;
     }
 
     public function getPhoneNumber()
     {
-        return $this->attributes['phoneNumber'];
+        return $this->attributes['phone_number'];
     }
 
-    public function setPhoneNumber($phoneNumber)
+    public function setPhoneNumber($phone_number)
     {
-        $this->attributes['phoneNumber'] = $phoneNumber;
+        $this->attributes['phone_number'] = $phone_number;
     }
 
     public function getAdmin()
