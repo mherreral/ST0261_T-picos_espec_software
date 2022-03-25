@@ -31,4 +31,5 @@ return [
     'wishlist.liquor' => 'Liquor:',
     'wishlist.liquor.quantity' => 'Quantity:',
     'wishlist.toCart' => 'Add wishlist to cart',
+    'wishlist.email.error' => 'Cant find a user registered with some of the given emails',
 ];
