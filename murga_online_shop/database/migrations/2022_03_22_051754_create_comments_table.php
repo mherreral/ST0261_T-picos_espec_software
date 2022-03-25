@@ -18,10 +18,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('description');
             $table->integer('score');
-            $table->unsignedBigInteger('customerId');
-            $table->foreign('customerId')->references('id')->on('users');
-            $table->unsignedBigInteger('liquorId');
-            $table->foreign('liquorId')->references('id')->on('liquors');
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('users');
+            $table->unsignedBigInteger('liquor_id');
+            $table->foreign('liquor_id')->references('id')->on('liquors');
         });
     }
 

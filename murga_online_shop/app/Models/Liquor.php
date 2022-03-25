@@ -22,7 +22,7 @@ class Liquor extends Model
      */
 
     protected $fillable = [
-        'liquorType',
+        'liquor_type',
         'brand',
         'price',
         'stock',
@@ -34,7 +34,7 @@ class Liquor extends Model
     public static function validate($request)
     {
         $request->validate([
-            "liquorType" => "required|string",
+            "liquor_type" => "required|string",
             "brand" => "required|string",
             "price" => "required|numeric|gt:0",
             "stock" => "required|numeric",
@@ -56,12 +56,12 @@ class Liquor extends Model
 
     public function getLiquorType()
     {
-        return $this->attributes['liquorType'];
+        return $this->attributes['liquor_type'];
     }
 
-    public function setLiquorType($liquorType)
+    public function setLiquorType($liquor_type)
     {
-        $this->attributes['liquorType'] = $liquorType;
+        $this->attributes['liquor_type'] = $liquor_type;
     }
 
     public function getBrand()
