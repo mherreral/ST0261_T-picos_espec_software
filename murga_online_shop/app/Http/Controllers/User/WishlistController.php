@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Wishlist;
 use App\Models\User;
-use Exception;
 use Illuminate\Support\Facades\Auth;
 
 class WishlistController extends Controller
@@ -19,16 +18,8 @@ class WishlistController extends Controller
         $userWishlists = [];
         foreach ($loggedUser->wishlists as $wishlist) {
             array_push($userWishlists, $wishlist);
-            //echo $role->pivot->created_at;
         }
-        //$userWishlists = $loggedUser->getWishlists();
-        /*$userWishlists = $loggedUser->getId()->wishlists->map(
-            function ($wishlist) {
-                return $wishlist->getId;
-            }
-        );*/
-        $wishlists = Wishlist::with('customers')->whereIn('id', $userWishlists);
-        $viewData["wishlists"] = $wishlists;
+        $viewData["wishlists"] = $userWishlists;
         return view('user.wishlist.index')->with("viewData", $viewData);
     }
 
@@ -38,7 +29,7 @@ class WishlistController extends Controller
         $wishlist = Wishlist::findOrFail($id);
         $viewData["title"] = $wishlist->getName();
         $viewData["wishlist"] = $wishlist;
-        return view('user.wishlist.index')->with("viewData", $viewData);
+        return view('user.wishlist.show')->with("viewData", $viewData);
     }
 
     public function parseCustomerInput($customersText)
@@ -47,40 +38,47 @@ class WishlistController extends Controller
         return $customersEmail;
     }
 
-    public function create(Request $request)
+    public function create()
+    {
+        $viewData["title"] = __('messages.wishlist.create');
+        return view('user.wishlist.create')->with("viewData", $viewData);
+    }
+
+    public function save(Request $request)
     {
         Wishlist::validate($request);
         $newWishlist = new Wishlist();
         $newWishlist->setName($request->input('name'));
+        $newWishlist->save();
+
+        $wishlistId = $newWishlist->getId();
         $customersText = $request->input('customers');
-        $customers = [];
+        //$customers = [];
 
         if (strlen($customersText) != 0) {
             # Add wishlist creator as owner
-            $customersEmail = parseCustomerInput($customersText);
-            $userEmail = Auth::user()->email();
+            $customersEmail = $this->parseCustomerInput($customersText);
+            $userEmail = Auth::user()->getEmail();
             array_push($customersEmail, $userEmail);
 
             # Iterate over customers and associate them to wishlist
             for ($i = 0; $i < count($customersEmail); $i++) {
                 # Try to find a user registered with the emails
-                try {
-                    $customer = User::where('email', $customersEmail[$i])->get();
-                } catch (Exception $e) {
-                    $error = "Can't find a user registered with some of the given emails";
+                $customer = User::where('email', $customersEmail[$i])->get();
+                if ($customer->isEmpty()) {
+                    $error = __('messages.wishlist.email.error');
                     return view('user.wishlist.error')->with("error", $error);
                 }
                 # Add user to customers array
-                array_push($customers, $customer);
-
-                #$newWishlist->setCustomers($customer);
+                $newWishlist = Wishlist::find($wishlistId);
+                $newWishlist->customers()->attach($customer);
             }
         } else {
-            $customers = Auth::user();
+            $customer = Auth::user();
+            $newWishlist->setCustomers($customer);
         }
-        $newWishlist->setCustomers($customers);
-        $newWishlist->save();
-        return back();
+
+        return redirect('/');
     }
 
     public function delete($id)
