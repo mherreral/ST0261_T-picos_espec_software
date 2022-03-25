@@ -30,6 +30,7 @@ return [
     'liquor.quantity' => 'Quantity',
     'liquor.wishlist' => 'Wishlist',
     'wishlist.add' => 'Add to wishlist',
+    
     //Wishlis
     'wishlist.title' => 'Wishlists - LA MURGA',
     'wishlist.create' => 'Create wishlist',
