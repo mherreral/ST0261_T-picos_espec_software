@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{ $viewData['wishlist']->getName() }}
+                        <b> {{ $viewData['wishlist']->getName() }} </b>
                     </h5>
                     @foreach ($viewData['wishlist']->items as $item)
                         - {{ __('messages.wishlist.liquor') }} {{ $item->liquor->getName() }} -
@@ -14,7 +14,7 @@
                     @endforeach
                     <div>
                         <a
-                            href="{{ route('user.shoppingCart.add', ['id' => $viewData['wishlist']->getId()]) }}"><button>{{ __('messages.wishlist.wishlist.toCart') }}</button></a>
+                            href="#"><button>{{ __('messages.wishlist.toCart') }}</button></a>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $title)
+@section('title', $viewData['title'])
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -14,7 +14,7 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <form method="POST" action="{{ route('user.wishlist.create') }}">
+                        <form method="POST" action="{{ route('user.wishlist.save') }}">
                             @csrf
                             <input type="text" class="form-control mb-2" placeholder="{{ __('messages.wishlist.name') }}"
                                 name="name" value="{{ old('name') }}" />
