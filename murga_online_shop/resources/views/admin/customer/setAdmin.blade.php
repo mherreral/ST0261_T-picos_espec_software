@@ -23,8 +23,8 @@
                                 @endforeach
                             </select>
                             <select name="adminFlag">
-                                <option value="0">Standard</option>
-                                <option value="1">Admin</option>
+                                <option value="0">{{ __('messages.admin.customer.standardFlag') }}</option>
+                                <option value="1">{{ __('messages.admin.customer.adminFlag') }}</option>
                             </select>
                             <input type="submit" class="btn btn-primary" value="Send" />
                         </form>

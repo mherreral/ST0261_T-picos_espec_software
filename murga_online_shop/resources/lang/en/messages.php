@@ -23,6 +23,8 @@ return [
     'admin.manageSetAdmin' => 'Set Admin User',
     'admin.manageDeleteCustomer' => 'Delete Customer',
     'admin.customer.successful' => 'Successful operation',
+    'admin.customer.standardFlag' => 'Standard',
+    'admin.customer.adminFlag' => 'Admin',
     'admin.goBackHome' => 'Go back to the administration panel',
     'admin.name' => ':name',
     'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.'
