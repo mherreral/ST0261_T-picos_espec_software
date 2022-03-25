@@ -21,5 +21,13 @@ return [
     'admin.manageLiquors' => 'Manage liquors',
     'admin.home' => 'Go back to the home page',
     'admin.name' => ':name',
-    'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.'
+    'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.',
+
+    //Shop
+    'shop.title' => 'Liquors shop',
+
+    //Liquor
+    'liquor.quantity' => 'Quantity',
+    'liquor.wishlist' => 'Wishlist',
+    'wishlist.add' => 'Add to wishlist',
 ];
