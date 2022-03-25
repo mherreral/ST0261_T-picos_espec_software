@@ -30,4 +30,13 @@ return [
     'liquor.quantity' => 'Quantity',
     'liquor.wishlist' => 'Wishlist',
     'wishlist.add' => 'Add to wishlist',
+    //Wishlis
+    'wishlist.title' => 'Wishlists - LA MURGA',
+    'wishlist.create' => 'Create wishlist',
+    'wishlist.name' => 'Enter wishlist name',
+    'wishlist.customers' => 'Enter wishlist collaborators emails (semicolon separated list of emails)',
+    'wishlist.liquor' => 'Liquor:',
+    'wishlist.liquor.quantity' => 'Quantity:',
+    'wishlist.toCart' => 'Add wishlist to cart',
+    'wishlist.email.error' => 'Cant find a user registered with some of the given emails',
 ];
