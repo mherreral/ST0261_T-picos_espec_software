@@ -23,13 +23,9 @@
             <ul class="nav flex-column">
                 <li><a href="#" class="nav-link text-white">{{ __('messages.admin.createLiquors') }}</a></li>
                 <li><a href="#" class="nav-link text-white">{{ __('messages.admin.manageLiquors') }}</a></li>
-                <li><a href="{{ route('admin.customer.setAdmin') }}"
-                        class="nav-link text-white">{{ __('messages.admin.manageSetAdmin') }}</a></li>
-                <li><a href="{{ route('admin.customer.delete') }}"
-                        class="nav-link text-white">{{ __('messages.admin.manageDeleteCustomer') }}</a></li>
                 <li>
                     <a href="{{ route('user.home.index') }}"
-                        class="mt-2 btn bg-primary text-white">{{ __('messages.home.goBackHome') }}</a>
+                        class="mt-2 btn bg-primary text-white">{{ __('messages.admin.home') }}</a>
                 </li>
             </ul>
         </div>
@@ -51,8 +47,8 @@
     <div class="copyright py-4 text-center text-white">
         <div class="container">
             <small>
-                {{ __('messages.home.copyright') }} <a class="text-reset fw-bold text-decoration-none"
-                    target="_blank" href="https://twitter.com/danielgarax">
+                {{ __('messages.home.copyright') }} <a class="text-reset fw-bold text-decoration-none" target="_blank"
+                    href="https://twitter.com/danielgarax">
                     {{ __('messages.home.author') }}
             </small>
         </div>

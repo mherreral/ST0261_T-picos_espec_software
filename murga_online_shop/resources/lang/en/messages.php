@@ -9,7 +9,6 @@ return [
     'home.author' => 'Daniel Correa',
     'home.welcome' => 'Welcome to our store!',
     'home.admin' => 'Admin panel',
-    'home.goBackHome' => 'Go back to the home page',
 
     //Auth
     'auth.login' => 'Login',
@@ -20,10 +19,7 @@ return [
     'admin.title' => 'Admin panel',
     'admin.createLiquors' => 'Create liquor',
     'admin.manageLiquors' => 'Manage liquors',
-    'admin.manageSetAdmin' => 'Set Admin User',
-    'admin.manageDeleteCustomer' => 'Delete Customer',
-    'admin.customer.successful' => 'Successful operation',
-    'admin.goBackHome' => 'Go back to the administration panel',
+    'admin.home' => 'Go back to the home page',
     'admin.name' => ':name',
     'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.'
 ];
