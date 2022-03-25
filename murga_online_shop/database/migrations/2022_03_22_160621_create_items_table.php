@@ -18,10 +18,10 @@ return new class extends Migration
             $table->timestamps();
             $table->float('subtotal');
             $table->integer('quantity');
-            $table->unsignedBigInteger('liquorId');
-            $table->foreign('liquorId')->references('id')->on('liquors');
-            $table->unsignedBigInteger('wishlistId');
-            $table->foreign('wishlistId')->references('id')->on('wishlists');
+            $table->unsignedBigInteger('liquor_id');
+            $table->foreign('liquor_id')->references('id')->on('liquors');
+            $table->unsignedBigInteger('wishlist_id');
+            $table->foreign('wishlist_id')->references('id')->on('wishlists');
         });
     }
 

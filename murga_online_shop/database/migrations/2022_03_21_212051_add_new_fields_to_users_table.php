@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('idNumber');
-            $table->float('availableMoney')->default(1000);
+            $table->string('id_number');
+            $table->float('available_money')->default(1000);
             $table->string('address');
-            $table->date('birthDate')->nullable();
-            $table->string('phoneNumber');
+            $table->date('birth_date')->nullable();
+            $table->string('phone_number');
             $table->boolean('admin')->default(0);
         });
     }

@@ -37,17 +37,6 @@ class Wishlist extends Model
         $this->attributes['id'] = $id;
     }
 
-    public function getLink()
-    {
-        return $this->attributes['link'];
-    }
-
-    public function setLink($link)
-    {
-        $this->attributes['link'] = $link;
-    }
-
-
     public function getName()
     {
         return $this->attributes['name'];
