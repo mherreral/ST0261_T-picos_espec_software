@@ -29,7 +29,8 @@ Route::middleware('admin')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/wishlists', 'App\Http\Controllers\User\WishlistController@index')->name("user.wishlist.index");
-    Route::post('/wishlists/create', 'App\Http\Controllers\User\WishlistController@create')->name("user.wishlist.create");
+    Route::get('/wishlists/create', 'App\Http\Controllers\User\WishlistController@create')->name("user.wishlist.create");
+    Route::post('/wishlists/save', 'App\Http\Controllers\User\WishlistController@save')->name("user.wishlist.save");
     Route::get('/wishlists/{id}', 'App\Http\Controllers\User\WishlistController@show')->name("user.wishlist.show");
     Route::delete('/wishlists/delete/{id}', 'App\Http\Controllers\User\WishlistController@delete')->name("user.wishlist.delete");
 });
