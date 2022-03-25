@@ -35,7 +35,6 @@ class User extends Authenticatable
         'id_number',
         'address',
         'phone_number',
-        'admin',
     ];
 
     public static function validate($request)
@@ -48,7 +47,6 @@ class User extends Authenticatable
             "id_number" => "required|numeric",
             "address" => "required",
             "phone_number" => "required|numeric",
-            "admin" => "min:0|max:1",
         ]);
     }
 
