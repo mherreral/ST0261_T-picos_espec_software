@@ -33,7 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/wishlists/save', 'App\Http\Controllers\User\WishlistController@save')->name("user.wishlist.save");
     Route::get('/wishlists/{id}', 'App\Http\Controllers\User\WishlistController@show')->name("user.wishlist.show");
     Route::delete('/wishlists/delete/{id}', 'App\Http\Controllers\User\WishlistController@delete')->name("user.wishlist.delete");
-    Route::get('/liquor/add', 'App\HttpÇontrollers\User\WishlistController@addItem')->name('user.wishlist.add');
+    Route::get('/liquors', 'App\Http\Controllers\User\LiquorController@index')->name("user.liquor.index");
+    Route::get('/liquors/{id}', 'App\Http\Controllers\User\LiquorController@show')->name("user.liquor.show");
+    Route::post('/wishlist/add/{id}', 'App\Http\Controllers\User\WishlistController@addItem')->name('user.wishlist.add');
 });
 
 Route::get('locale/{locale}', 'App\Http\Controllers\LocalizationController@locale')->name('locale');
