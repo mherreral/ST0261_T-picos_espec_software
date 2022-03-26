@@ -57,7 +57,7 @@ class Wishlist extends Model
 
     public function getCustomers()
     {
-        return $this->customers();
+        return $this->customers;
     }
 
     public function setCustomers($customers)
@@ -72,7 +72,7 @@ class Wishlist extends Model
 
     public function getItems()
     {
-        return $this->items();
+        return $this->items;
     }
 
     public function setItems($items)

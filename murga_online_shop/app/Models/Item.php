@@ -12,8 +12,10 @@ class Item extends Model
      * $this->attributes['id'] - int - contains the item primary key (id)
      * $this->attributes['subtotal'] - float - contains the item subtotal (quantity*price)
      * $this->attributes['quantity'] - int - contains liquor quantity
+     * $this->attributes['liquor_id'] - liquor - contains the related liquor id
      * $this->attributes['liquor'] - liquor - contains the related liquor
-     * $this->attributes['wishlist'] - Wishlist - contains the related wishlist
+     * $this->attributes['wishlist'] - int - contains the related wishlist
+     * $this->attributes['wishlist_id'] - int - contains the related wishlist id
      */
     protected $fillable = [
         'quantity',
@@ -60,8 +62,50 @@ class Item extends Model
     {
         return $this->belongsTo(Liquor::class);
     }
+
+
+    public function getLiquorId()
+    {
+        return $this->attributes['liquor_id'];
+    }
+
+    public function setLiquorId($liquorId)
+    {
+        $this->attributes['liquor_id'] = $liquorId;
+    }
+
+    public function setLiquor($liquor)
+    {
+        $this->liquor = $liquor;
+    }
+
+    public function getLiquor()
+    {
+        return $this->liquor;
+    }
+
     public function wishlist()
     {
         return $this->belongsTo(Wishlist::class);
+    }
+
+    public function setWishlist($wishlist)
+    {
+        $this->wishlist = $wishlist;
+    }
+
+    public function getWishlist()
+    {
+        return $this->wishlist;
+    }
+
+    public function getWishlistId()
+    {
+        return $this->attributes['wishlist_id'];
+    }
+
+    public function setWishlistId($wishlistId)
+    {
+        $this->attributes['wishlist_id'] = $wishlistId;
     }
 }
