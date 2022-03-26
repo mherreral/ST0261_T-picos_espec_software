@@ -8,7 +8,7 @@
                     <img src="{{ asset('/storage/' . $liquor->getImage()) }}" class="card-img-top img-card">
                     <div class="card-body text-center">
                         <a href="{{ route('user.liquor.show', ['id' => $liquor->getId()]) }}"
-                            class="btn bg-primary text-white">{{ $liquor->getName() }}</a>
+                            class="btn bg-primary text-white">{{ $liquor->getLiquorType() }} {{ $liquor->getBrand() }}</a>
                     </div>
                 </div>
             </div>
