@@ -1,5 +1,7 @@
 <?php
 
+//Modified by: Manuela Herrera López
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

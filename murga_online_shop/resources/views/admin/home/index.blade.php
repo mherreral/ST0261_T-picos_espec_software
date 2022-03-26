@@ -1,3 +1,4 @@
+<!-- Authors: Manuela Herrera López -->
 @extends('layouts.admin')
 @section('title', $viewData['title'])
 @section('content')

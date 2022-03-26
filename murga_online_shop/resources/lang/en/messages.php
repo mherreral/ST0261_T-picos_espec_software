@@ -1,5 +1,7 @@
 <?php
 
+// Authors: Manuela Herrera López and Samuel Palacios
+
 return [
     //Homepage
     'home.title' => 'LA MURGA - Liquors',

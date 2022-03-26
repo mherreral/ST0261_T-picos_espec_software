@@ -1,5 +1,7 @@
 <?php
 
+//Authors: Manuela Herrera López
+
 return [
     'register' => 'Register',
     'email' => 'Email address',
