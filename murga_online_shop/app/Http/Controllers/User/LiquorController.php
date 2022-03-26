@@ -25,7 +25,7 @@ class LiquorController extends Controller
         foreach ($loggedUser->wishlists as $wishlist) {
             array_push($userWishlists, $wishlist);
         }
-        $viewData["title"] = $liquor->getName();
+        $viewData["title"] = $liquor->getLiquorType().$liquor->getBrand();
         $viewData["liquor"] = $liquor;
         $viewData["wishlists"] = $userWishlists;
         return view('user.liquor.show')->with("viewData", $viewData);
