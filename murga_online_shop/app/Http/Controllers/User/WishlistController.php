@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Item;
+use App\Models\Liquor;
 use App\Models\Wishlist;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +18,8 @@ class WishlistController extends Controller
         $viewData["title"] = __('messages.wishlist.title');
         $loggedUser = Auth::user();
         $userWishlists = [];
+
+        //Find wishlists associated with current user
         foreach ($loggedUser->wishlists as $wishlist) {
             array_push($userWishlists, $wishlist);
         }
@@ -32,6 +36,7 @@ class WishlistController extends Controller
         return view('user.wishlist.show')->with("viewData", $viewData);
     }
 
+    //Function for parsing semicolon separated array containing user emails
     public function parseCustomerInput($customersText)
     {
         $customersEmail = explode(";", $customersText);
@@ -47,13 +52,13 @@ class WishlistController extends Controller
     public function save(Request $request)
     {
         Wishlist::validate($request);
+
         $newWishlist = new Wishlist();
         $newWishlist->setName($request->input('name'));
         $newWishlist->save();
 
         $wishlistId = $newWishlist->getId();
         $customersText = $request->input('customers');
-        //$customers = [];
 
         if (strlen($customersText) != 0) {
             # Add wishlist creator as owner
@@ -75,7 +80,7 @@ class WishlistController extends Controller
             }
         } else {
             $customer = Auth::user();
-            $newWishlist->setCustomers($customer);
+            $newWishlist->customers()->attach($customer);
         }
 
         return redirect('/');
@@ -86,5 +91,21 @@ class WishlistController extends Controller
         $wishlist = Wishlist::findOrFail($id);
         $wishlist->delete();
         return redirect('/');
+    }
+
+    public function addItem(Request $request, $id)
+    {
+        $liquor = Liquor::find($id);
+        $wishlist = Wishlist::find($request->wishlist);
+        $quantity = $request->quantity;
+        $item = new Item();
+        $item->setQuantity($quantity);
+        $item->setLiquorId($id);
+        $item->setWishlistId($request->wishlist);
+        $item->save();
+        $item->setLiquor($liquor);
+        $item->setWishlist($wishlist);
+
+        return redirect()->route('user.liquor.index');
     }
 }
