@@ -2,7 +2,7 @@
 @section('title', $viewData['title'])
 @section('content')
     <div class="text-center">
-        {{ __('messages.admin.customer.saveSubTitle') }}
+        {{ $viewData['subtitle'] }}
     </div>
     <div class="text-center">
         <a href="{{ route('user.home.index') }}"
