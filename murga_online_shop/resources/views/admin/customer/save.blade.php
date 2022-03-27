@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Customer saved')
+@section('title', $viewData['title'])
 @section('content')
     <div class="text-center">
-        {{ __('messages.admin.customer.successful') }}
+        {{ __('messages.admin.customer.saveSubTitle') }}
     </div>
     <div class="text-center">
         <a href="{{ route('user.home.index') }}"

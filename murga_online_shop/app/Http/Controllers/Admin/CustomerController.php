@@ -11,8 +11,8 @@ class CustomerController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["title"] = "Admin - Customer";
-        $viewData["subtitle"] = "List of customers";
+        $viewData["title"] = __('messages.admin.customer.indexTitle');
+        $viewData["subtitle"] = __('messages.admin.customer.indexSubTitle');
         $viewData["customers"] = User::all();
         return view('admin.customer.index')->with("viewData", $viewData);
     }
@@ -23,8 +23,8 @@ class CustomerController extends Controller
         $aux = $id - 1;
         if ($aux <= User::count()) {
             $customer = User::findOrFail($id);
-            $viewData["title"] = $customer["name"] . " - Online Store";
-            $viewData["subtitle"] = $customer["name"] . " - Customer information";
+            $viewData["title"] = $customer->getName() . __('messages.admin.customer.showTitle');
+            $viewData["subtitle"] = $customer->getName() . __('messages.admin.customer.showSubTitle');;
             $viewData["picture"] = "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png";
             $viewData["customer"] = $customer;
             return view('admin.customer.show')->with("viewData", $viewData);
@@ -36,7 +36,7 @@ class CustomerController extends Controller
     public function setAdmin()
     {
         $viewData = [];
-        $viewData["title"] = "Set admin customer";
+        $viewData["title"] = __('messages.admin.customer.setAdminTitle');
         $viewData["customers"] = User::all();
         return view('admin.customer.setAdmin')->with("viewData", $viewData);
     }
@@ -44,13 +44,17 @@ class CustomerController extends Controller
     public function delete()
     {
         $viewData = [];
-        $viewData["title"] = "Delete customer";
+        $viewData["title"] = __('messages.admin.customer.deleteTitle');
         $viewData["customers"] = User::all();
         return view('admin.customer.delete')->with("viewData", $viewData);
     }
 
     public function save(Request $request)
     {
+        $viewData = [];
+        $viewData["title"] = __('messages.admin.customer.saveTitle');
+        $viewData["subtitle"] = __('messages.admin.customer.saveSubTitle');;
+
         if ($request->has("adminFlag")) {
             $request = $request->only(["adminId", "adminFlag"]);
             $user = User::findOrFail($request["adminId"]);
@@ -61,6 +65,6 @@ class CustomerController extends Controller
             $user->delete();
         }
 
-        return view('admin.customer.save');
+        return view('admin.customer.save')->with("viewData", $viewData);
     }
 }
