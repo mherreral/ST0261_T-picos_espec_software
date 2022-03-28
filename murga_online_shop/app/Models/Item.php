@@ -29,6 +29,12 @@ class Item extends Model
         ]);
     }
 
+    public static function getItemSubtotal($price, $quantity)
+    {
+        $subtotal = $price * $quantity;
+        return $subtotal;
+    }
+
     public function getId()
     {
         return $this->attributes['id'];

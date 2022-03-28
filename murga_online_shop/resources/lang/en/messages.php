@@ -32,7 +32,7 @@ return [
     'liquor.quantity' => 'Quantity',
     'liquor.wishlist' => 'Wishlist',
     'wishlist.add' => 'Add to wishlist',
-    
+
     //Wishlis
     'wishlist.title' => 'Wishlists - LA MURGA',
     'wishlist.create' => 'Create wishlist',
@@ -42,4 +42,18 @@ return [
     'wishlist.liquor.quantity' => 'Quantity:',
     'wishlist.toCart' => 'Add wishlist to cart',
     'wishlist.email.error' => 'Cant find a user registered with some of the given emails',
+
+    //Shoppingcart
+    'shoppingCart.title' => 'Liquor shopping cart',
+    'shoppingCart.purchase.title' => 'La murga - purchase',
+    'shoppingCart.aux' => '',
+    'shoppingCart.success' => 'Purchase completed succesfully!',
+    'shoppingCart.error' => 'You do not have enough money for buying the liquors',
+    'shoppingCart.wishlists' => 'Wishlists in cart',
+    'shoppingCart.wishlists.item.name' => 'Name',
+    'shoppingCart.wishlists.item.total' => 'Total',
+    'shoppingCart.wishlists.item.quantity' => 'Quantity',
+    'shoppingCart.wishlists.total' => 'Total to pay',
+    'shoppingCart.purchase' => 'Purchase',
+    'shoppingCart.delete' => 'Remove all products from Cart',
 ];

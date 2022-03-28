@@ -38,6 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/liquors', 'App\Http\Controllers\User\LiquorController@index')->name("user.liquor.index");
     Route::get('/liquors/{id}', 'App\Http\Controllers\User\LiquorController@show')->name("user.liquor.show");
     Route::post('/wishlist/add/{id}', 'App\Http\Controllers\User\WishlistController@addItem')->name('user.wishlist.add');
+    Route::post('/cart/add/{id}', 'App\Http\Controllers\User\ShoppingCartController@add')->name("user.shoppingCart.add");
+    Route::get('/cart', 'App\Http\Controllers\User\ShoppingCartController@index')->name("user.shoppingCart.index");
 });
 
 Route::get('locale/{locale}', 'App\Http\Controllers\LocalizationController@locale')->name('locale');

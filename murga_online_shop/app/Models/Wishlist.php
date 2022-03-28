@@ -31,6 +31,17 @@ class Wishlist extends Model
         ]);
     }
 
+    public static function getWishlistTotal($wishlistsInCart)
+    {
+        $total = 0;
+        foreach ($wishlistsInCart as $wishlist) {
+            foreach ($wishlist->items as $item) {
+                $total = $total + $item->getSubtotal();
+            }
+        }
+        return $total;
+    }
+
     public function getId()
     {
         return $this->attributes['id'];

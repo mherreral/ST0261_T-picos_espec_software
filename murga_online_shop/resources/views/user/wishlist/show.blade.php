@@ -14,9 +14,15 @@
                         {{ $item->liquor->getBrand() }} -
                         {{ __('messages.wishlist.liquor.quantity') }} {{ $item->getQuantity() }}<br />
                     @endforeach
-                    <div>
-                        <a href="#"><button>{{ __('messages.wishlist.toCart') }}</button></a>
-                    </div>
+                    @if (count($viewData['wishlist']->items) > 0)
+                        <form method="POST"
+                            action="{{ route('user.shoppingCart.add', ['id' => $viewData['wishlist']->getId()]) }}">
+                            @csrf
+                            <div>
+                                <button name="addToCart">{{ __('messages.wishlist.toCart') }}</button>
+                            </div>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>
