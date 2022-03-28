@@ -16,13 +16,16 @@ return [
     'auth.register' => 'Register',
     'auth.logout' => 'Logout',
 
+    //User
+    'user.customer.availableMoney' => 'Available Money',
+
     //Admin
     'admin.title' => 'Admin panel',
     'admin.createLiquors' => 'Create liquor',
     'admin.manageLiquors' => 'Manage liquors',
     'admin.manageSetAdmin' => 'Set Admin User',
     'admin.manageDeleteCustomer' => 'Delete Customer',
-    'admin.customer.indexTitle' => 'Admin Customer',
+    'admin.customer.indexTitle' => 'Admin Customers',
     'admin.customer.indexSubTitle' => 'List of Customers',
     'admin.customer.showTitle' => ' Murga',
     'admin.customer.showSubTitle' => ' Information',
