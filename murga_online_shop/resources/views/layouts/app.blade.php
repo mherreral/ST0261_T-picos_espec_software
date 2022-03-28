@@ -14,7 +14,11 @@
     <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
         <div class="container">
-            <a class="navbar-brand" href="#"> {{ __('messages.home.title') }} </a>
+            <a class="navbar-brand" href="{{ route('user.home.index') }}">
+                <div class="logo-image">
+                    <img class="img-fluid" src="{{ asset('/img/la_murga_logo.png') }}">
+                </div>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
