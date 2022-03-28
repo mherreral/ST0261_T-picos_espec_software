@@ -17,7 +17,6 @@ class ShoppingCartController extends Controller
         $wishlistsInCart = [];
 
         $wishlistsInSession = $request->session()->get("wishlists");
-        dd($wishlistsInSession);
         if ($wishlistsInSession) {
             $wishlistsInCart = Wishlist::findMany(array_keys($wishlistsInSession));
             $total = Wishlist::getWishlistTotal($wishlistsInCart);
@@ -33,7 +32,7 @@ class ShoppingCartController extends Controller
     public function add(Request $request, $id)
     {
         $wishlists = $request->session()->get("wishlists");
-        //$wishlists[$id] = $request->input('quantity');
+        $wishlists[$id] = $id;
         $request->session()->put('wishlists', $wishlists);
 
         return redirect()->route('user.shoppingCart.index');
@@ -47,14 +46,35 @@ class ShoppingCartController extends Controller
 
     public function purchase(Request $request)
     {
+        $wishlistsInCart = [];
         $wishlistsInSession = $request->session()->get("wishlists");
         if ($wishlistsInSession) {
             $loggedUser = Auth::user();
             $viewData = [];
             $viewData["title"] = __('messages.shoppingCart.purchase');
             $viewData["message"] = __('messages.shoppingCart.aux');
-            $total = Wishlist::getWishlistTotal($wishlistsInSession);
+            $wishlistsInCart = Wishlist::findMany(array_keys($wishlistsInSession));
+            $total = Wishlist::getWishlistTotal($wishlistsInCart);
 
+            //Reduce liquor stock
+            foreach ($wishlistsInCart as $wishlist) {
+                foreach ($wishlist->items as $item) {
+                    $liquorItem = $item->liquor;
+                    $quantity = $item->getQuantity();
+                    $currentStock = $liquorItem->getStock();
+
+                    //Check if we can do the purchase
+                    if ($currentStock >= $quantity) {
+                        $newStock = $currentStock - $quantity;
+                        $liquorItem->setStock($newStock);
+                        $liquorItem->save();
+                    } else {
+                        $error = __('messages.shoppingCart.error.outOfStock');
+                        return view('user.shoppingCart.error')->with("error", $error);
+                    }
+                }
+            }
+            //Update user available money
             if ($loggedUser->getAvailableMoney() >= $total) {
                 $availableMoney = $loggedUser->getAvailableMoney() - $total;
                 $loggedUser->setAvailableMoney($availableMoney);
@@ -65,6 +85,7 @@ class ShoppingCartController extends Controller
             }
 
             $request->session()->forget('wishlists');
+
             return view('user.shoppingCart.purchase')->with("viewData", $viewData);
         } else {
             return redirect()->route('user.shoppingCart.index');
