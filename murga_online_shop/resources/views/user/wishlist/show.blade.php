@@ -23,6 +23,14 @@
                             </div>
                         </form>
                     @endif
+                    <form method="POST"
+                        action="{{ route('user.wishlist.delete', ['id' => $viewData['wishlist']->getId()]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">
+                            {{ __('messages.wishlist.delete') }}
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
