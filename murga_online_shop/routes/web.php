@@ -20,6 +20,10 @@ Auth::routes();
 
 //Route::get('/', 'App\Http\Controllers\User\HomeController@index')->name("user.home.index");
 Route::get('/', 'App\Http\Controllers\User\LiquorController@index')->name("user.home.index");
+
+//liquors
+Route::get('/liquors', 'App\Http\Controllers\User\LiquorController@index')->name("user.liquor.index");
+
 // Auth needed
 
 //Admin
@@ -67,8 +71,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/wishlists/delete/{id}', 'App\Http\Controllers\User\WishlistController@delete')->name("user.wishlist.delete");
     Route::post('/wishlist/add/{id}', 'App\Http\Controllers\User\WishlistController@addItem')->name('user.wishlist.add');
 
-    //liquors
-    Route::get('/liquors', 'App\Http\Controllers\User\LiquorController@index')->name("user.liquor.index");
+    //Liquors
     Route::get('/liquors/{id}', 'App\Http\Controllers\User\LiquorController@show')->name("user.liquor.show");
 
     //Cart
