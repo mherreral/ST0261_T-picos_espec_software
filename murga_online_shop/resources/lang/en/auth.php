@@ -15,7 +15,7 @@ return [
     'checkVerificationLink' => 'Before proceeding, please check your email for a verification link.',
     'emailNotReceived' => 'If you did not receive the email',
     'idNumber' => 'ID card number',
-    'address' => 'Deliever address',
+    'address' => 'Deliver address',
     'birthDate' => 'Birthdate',
     'phoneNumber' => 'Phone number',
 
