@@ -21,9 +21,9 @@ return new class extends Migration
             $table->float('subtotal');
             $table->integer('quantity');
             $table->unsignedBigInteger('liquor_id');
-            $table->foreign('liquor_id')->references('id')->on('liquors');
+            $table->foreign('liquor_id')->references('id')->on('liquors')->onDelete('cascade');
             $table->unsignedBigInteger('wishlist_id');
-            $table->foreign('wishlist_id')->references('id')->on('wishlists');
+            $table->foreign('wishlist_id')->references('id')->on('wishlists')->onDelete('cascade');
         });
     }
 
