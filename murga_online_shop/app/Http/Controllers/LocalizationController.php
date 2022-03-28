@@ -1,5 +1,7 @@
 <?php
 
+//Authors: Manuela Herrera López
+
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\App;

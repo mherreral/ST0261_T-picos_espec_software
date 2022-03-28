@@ -1,5 +1,7 @@
 <?php
 
+//Authors: Manuela Herrera López, Samuel Palacios
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,9 +21,9 @@ return new class extends Migration
             $table->string('description');
             $table->integer('score');
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('users');
+            $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('liquor_id');
-            $table->foreign('liquor_id')->references('id')->on('liquors');
+            $table->foreign('liquor_id')->references('id')->on('liquors')->onDelete('cascade');
         });
     }
 
