@@ -11,6 +11,7 @@ return [
     'home.author' => 'Daniel Correa',
     'home.welcome' => 'Welcome to our store!',
     'home.admin' => 'Admin panel',
+    'home.shoppingCart' => 'Shopping cart',
 
     //Auth
     'auth.login' => 'Login',
@@ -37,6 +38,7 @@ return [
     'wishlist.title' => 'Wishlists - LA MURGA',
     'wishlist.create' => 'Create wishlist',
     'wishlist.name' => 'Enter wishlist name',
+    'wishlist.delete' => 'Delete wishlist',
     'wishlist.customers' => 'Enter wishlist collaborators emails (semicolon separated list of emails)',
     'wishlist.liquor' => 'Liquor:',
     'wishlist.liquor.quantity' => 'Quantity:',
@@ -56,4 +58,6 @@ return [
     'shoppingCart.wishlists.total' => 'Total to pay',
     'shoppingCart.purchase' => 'Purchase',
     'shoppingCart.delete' => 'Remove all products from Cart',
+    'shoppinCart.purchase.done' => 'The purchase was successful!',
+    'shoppingCart.error.outOfStock' => 'We\'re sorry, we don\'t have enough stock of some liquors in your cart',
 ];
