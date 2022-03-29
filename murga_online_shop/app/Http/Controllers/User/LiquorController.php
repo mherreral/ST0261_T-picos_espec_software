@@ -13,8 +13,8 @@ class LiquorController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData['title'] = __('messages.shop.title');
-        $viewData['liquors'] = Liquor::all();
+        $viewData["title"] = __('messages.shop.title');
+        $viewData["liquors"] = Liquor::all();
         return view('user.liquor.index')->with("viewData", $viewData);
     }
 
