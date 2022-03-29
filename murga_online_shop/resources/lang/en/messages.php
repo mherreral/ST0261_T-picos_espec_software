@@ -1,6 +1,6 @@
 <?php
 
-// Authors: Manuela Herrera López and Samuel Palacios
+// Authors: Manuela Herrera López, Samuel Palacios, Ana Arango
 
 return [
     //Homepage
@@ -49,7 +49,8 @@ return [
     'liquor.quantity' => 'Quantity',
     'liquor.wishlist' => 'Wishlist',
     'wishlist.add' => 'Add to wishlist',
-
+    'liquor.search' => 'Search liquor',
+    
     //Wishlis
     'wishlist.title' => 'Wishlists - LA MURGA',
     'wishlist.create' => 'Create wishlist',

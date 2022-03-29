@@ -1,6 +1,6 @@
 <?php
 
-//Authors: Manuela Herrera López
+//Authors: Manuela Herrera López, Samuel Palacios, Ana Arango
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -73,6 +73,7 @@ Route::middleware('auth')->group(function () {
 
     //Liquors
     Route::get('/liquors/{id}', 'App\Http\Controllers\User\LiquorController@show')->name("user.liquor.show");
+    Route::get('/search', 'App\Http\Controllers\User\LiquorController@search')->name("user.liquor.search");
 
     //Cart
     Route::post('/cart/add/{id}', 'App\Http\Controllers\User\ShoppingCartController@add')->name("user.shoppingCart.add");
