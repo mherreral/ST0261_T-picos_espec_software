@@ -47,7 +47,7 @@ return [
     'admin.createLiquorsStock' => 'EnterStock',
     'admin.createLiquorsPresentation' => 'EnterPresentation',
     'admin.createLiquorsMilliliters' => 'EnterMilliliters',
-    'admin.createLiquorsImage' => 'EnterImageURL',
+    'admin.createLiquorsImage' => 'Image',
     'admin.saveLiquorsSuccess' => 'Object Created Successfully',
 
     //Shop
