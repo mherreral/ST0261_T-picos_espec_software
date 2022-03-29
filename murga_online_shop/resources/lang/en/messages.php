@@ -50,6 +50,12 @@ return [
     'liquor.wishlist' => 'Wishlist',
     'wishlist.add' => 'Add to wishlist',
     'liquor.search' => 'Search liquor',
+
+    //Comments
+    'comment.createComments' => 'Add a Comment',
+    'comment.saveCommentsSuccess' => 'Comment added successfully',
+    'comment.createCommentDescription' => 'CommentDescription',
+    'comment.score' => 'Score',
     
     //Wishlis
     'wishlist.title' => 'Wishlists - LA MURGA',

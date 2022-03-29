@@ -80,6 +80,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/cart', 'App\Http\Controllers\User\ShoppingCartController@index')->name("user.shoppingCart.index");
     Route::get('/cart/purchase', 'App\Http\Controllers\User\ShoppingCartController@purchase')->name('user.shoppingCart.purchase');
     Route::get('/cart/delete', 'App\Http\Controllers\User\ShoppingCartController@delete')->name('user.shoppingCart.delete');
+
+    //Comments
+    Route::post('/comment/save/{id}', 'App\Http\Controllers\User\LiquorController@save')->name("user.comment.save");
 });
 
 Route::get('locale/{locale}', 'App\Http\Controllers\LocalizationController@locale')->name('locale');
