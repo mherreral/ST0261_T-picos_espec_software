@@ -58,6 +58,16 @@ Route::middleware('admin')->group(function () {
         '/admin/customer/{id}',
         'App\Http\Controllers\Admin\CustomerController@show'
     )->name("admin.customer.show");
+
+    Route::get(
+        '/admin/liquor/create',
+        'App\Http\Controllers\Admin\LiquorController@create'
+    )->name("admin.liquor.create");
+
+    Route::post(
+        '/admin/liquor/save',
+        'App\Http\Controllers\Admin\LiquorController@save'
+    )->name("admin.liquor.save");
 });
 
 //User

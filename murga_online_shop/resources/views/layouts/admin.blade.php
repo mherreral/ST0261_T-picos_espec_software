@@ -21,7 +21,7 @@
             </a>
             <hr />
             <ul class="nav flex-column">
-                <li><a href="#" class="nav-link text-white">{{ __('messages.admin.createLiquors') }}</a></li>
+                <li><a href="{{ route('admin.liquor.create') }}" class="nav-link text-white">{{ __('messages.admin.createLiquors') }}</a></li>
                 <li><a href="#" class="nav-link text-white">{{ __('messages.admin.manageLiquors') }}</a></li>
                 <li><a href="{{ route('admin.customer.index') }}"
                     class="nav-link text-white">{{ __('messages.admin.customer.indexTitle') }}</a></li>
