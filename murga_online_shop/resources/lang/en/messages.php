@@ -37,5 +37,24 @@ return [
     'admin.customer.adminFlag' => 'Admin',
     'admin.goBackHome' => 'Go back to the administration panel',
     'admin.name' => ':name',
-    'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.'
+    'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.',
+
+    //Shop
+    'shop.title' => 'Liquors shop',
+
+    //Liquor
+    'liquor.quantity' => 'Quantity',
+    'liquor.wishlist' => 'Wishlist',
+    'wishlist.add' => 'Add to wishlist',
+    'liquor.search' => 'Search liquor',
+    
+    //Wishlis
+    'wishlist.title' => 'Wishlists - LA MURGA',
+    'wishlist.create' => 'Create wishlist',
+    'wishlist.name' => 'Enter wishlist name',
+    'wishlist.customers' => 'Enter wishlist collaborators emails (semicolon separated list of emails)',
+    'wishlist.liquor' => 'Liquor:',
+    'wishlist.liquor.quantity' => 'Quantity:',
+    'wishlist.toCart' => 'Add wishlist to cart',
+    'wishlist.email.error' => 'Cant find a user registered with some of the given emails',
 ];

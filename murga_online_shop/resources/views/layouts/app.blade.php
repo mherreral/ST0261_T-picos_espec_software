@@ -25,8 +25,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" href="#"> {{ __('messages.home.store') }} </a>
-                    <a class="nav-link active" href="#"> {{ __('messages.home.wishlist') }} </a>
+                    <a class="nav-link active" href="{{ route('user.liquor.index') }}"> {{ __('messages.home.store') }}
+                    </a>
+                    <a class="nav-link active" href="{{ route('user.wishlist.index') }}">
+                        {{ __('messages.home.wishlist') }} </a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @if (Auth::user() and Auth::user()->getAdmin() === 1)
                         <a class="nav-link active" href="{{ route('admin.home.index') }}">
