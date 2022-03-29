@@ -1,5 +1,7 @@
 <?php
 
+//Authors: Manuela Herrera López
+
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
@@ -98,10 +100,13 @@ class WishlistController extends Controller
         $liquor = Liquor::find($id);
         $wishlist = Wishlist::find($request->wishlist);
         $quantity = $request->quantity;
+        $liquorPrice = $liquor->getPrice();
+        $subtotal = Item::getItemSubtotal($liquorPrice, $quantity);
         $item = new Item();
         $item->setQuantity($quantity);
         $item->setLiquorId($id);
         $item->setWishlistId($request->wishlist);
+        $item->setSubtotal($subtotal);
         $item->save();
         $item->setLiquor($liquor);
         $item->setWishlist($wishlist);

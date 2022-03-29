@@ -1,3 +1,4 @@
+<!-- Authors: Manuela Herrera López -->
 @extends('layouts.app')
 @section('title', $viewData['title'])
 @section('content')
@@ -13,9 +14,23 @@
                         {{ $item->liquor->getBrand() }} -
                         {{ __('messages.wishlist.liquor.quantity') }} {{ $item->getQuantity() }}<br />
                     @endforeach
-                    <div>
-                        <a href="#"><button>{{ __('messages.wishlist.toCart') }}</button></a>
-                    </div>
+                    @if (count($viewData['wishlist']->items) > 0)
+                        <form method="POST"
+                            action="{{ route('user.shoppingCart.add', ['id' => $viewData['wishlist']->getId()]) }}">
+                            @csrf
+                            <div>
+                                <button name="addToCart">{{ __('messages.wishlist.toCart') }}</button>
+                            </div>
+                        </form>
+                    @endif
+                    <form method="POST"
+                        action="{{ route('user.wishlist.delete', ['id' => $viewData['wishlist']->getId()]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">
+                            {{ __('messages.wishlist.delete') }}
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

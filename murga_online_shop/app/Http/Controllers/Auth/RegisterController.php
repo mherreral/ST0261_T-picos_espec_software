@@ -1,5 +1,7 @@
 <?php
 
+//Modified by: Manuela Herrera López
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -74,10 +76,10 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'birthDate' => $data['birthDate'],
-            'idNumber' => $data['idNumber'],
+            'birth_date' => $data['birthDate'],
+            'id_number' => $data['idNumber'],
             'address' => $data['address'],
-            'phoneNumber' => $data['phoneNumber'],
+            'phone_number' => $data['phoneNumber'],
         ]);
     }
 }

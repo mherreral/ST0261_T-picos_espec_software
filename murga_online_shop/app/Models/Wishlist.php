@@ -1,8 +1,9 @@
 <?php
 
+//Authors: Manuela Herrera López
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Item;
 use App\Models\User;
@@ -28,6 +29,17 @@ class Wishlist extends Model
         $request->validate([
             "name" => "required|string|max:255",
         ]);
+    }
+
+    public static function getWishlistTotal($wishlistsInCart)
+    {
+        $total = 0;
+        foreach ($wishlistsInCart as $wishlist) {
+            foreach ($wishlist->items as $item) {
+                $total = $total + $item->getSubtotal();
+            }
+        }
+        return $total;
     }
 
     public function getId()

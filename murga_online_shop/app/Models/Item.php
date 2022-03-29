@@ -1,8 +1,9 @@
 <?php
 
+//Authors: Manuela Herrera López
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
@@ -26,6 +27,12 @@ class Item extends Model
         $request->validate([
             "quantity" => "required|numeric|gt:0",
         ]);
+    }
+
+    public static function getItemSubtotal($price, $quantity)
+    {
+        $subtotal = $price * $quantity;
+        return $subtotal;
     }
 
     public function getId()

@@ -1,5 +1,7 @@
 <?php
 
+// Authors: Manuela Herrera López, Samuel Palacios, Ana Arango
+
 return [
     //Homepage
     'home.title' => 'LA MURGA - Liquors',
@@ -9,6 +11,7 @@ return [
     'home.author' => 'Daniel Correa',
     'home.welcome' => 'Welcome to our store!',
     'home.admin' => 'Admin panel',
+    'home.shoppingCart' => 'Shopping cart',
     'home.goBackHome' => 'Go back to the home page',
 
     //Auth
@@ -52,9 +55,26 @@ return [
     'wishlist.title' => 'Wishlists - LA MURGA',
     'wishlist.create' => 'Create wishlist',
     'wishlist.name' => 'Enter wishlist name',
+    'wishlist.delete' => 'Delete wishlist',
     'wishlist.customers' => 'Enter wishlist collaborators emails (semicolon separated list of emails)',
     'wishlist.liquor' => 'Liquor:',
     'wishlist.liquor.quantity' => 'Quantity:',
     'wishlist.toCart' => 'Add wishlist to cart',
     'wishlist.email.error' => 'Cant find a user registered with some of the given emails',
+
+    //Shoppingcart
+    'shoppingCart.title' => 'Liquor shopping cart',
+    'shoppingCart.purchase.title' => 'La murga - purchase',
+    'shoppingCart.aux' => '',
+    'shoppingCart.success' => 'Purchase completed succesfully!',
+    'shoppingCart.error' => 'You do not have enough money for buying the liquors',
+    'shoppingCart.wishlists' => 'Wishlists in cart',
+    'shoppingCart.wishlists.item.name' => 'Name',
+    'shoppingCart.wishlists.item.total' => 'Total',
+    'shoppingCart.wishlists.item.quantity' => 'Quantity',
+    'shoppingCart.wishlists.total' => 'Total to pay',
+    'shoppingCart.purchase' => 'Purchase',
+    'shoppingCart.delete' => 'Remove all products from Cart',
+    'shoppinCart.purchase.done' => 'The purchase was successful!',
+    'shoppingCart.error.outOfStock' => 'We\'re sorry, we don\'t have enough stock of some liquors in your cart',
 ];
