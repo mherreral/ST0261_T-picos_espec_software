@@ -12,8 +12,8 @@ class LiquorController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData['title'] = __('messages.shop.title');
-        $viewData['liquors'] = Liquor::all();
+        $viewData["title"] = __('messages.shop.title');
+        $viewData["liquors"] = Liquor::all();
         return view('user.liquor.index')->with("viewData", $viewData);
     }
 
@@ -26,19 +26,19 @@ class LiquorController extends Controller
         foreach ($loggedUser->wishlists as $wishlist) {
             array_push($userWishlists, $wishlist);
         }
-        $viewData['title'] = $liquor->getLiquorType().$liquor->getBrand();
-        $viewData['liquor'] = $liquor;
-        $viewData['wishlists'] = $userWishlists;
+        $viewData["title"] = $liquor->getLiquorType() . $liquor->getBrand();
+        $viewData["liquor"] = $liquor;
+        $viewData["wishlists"] = $userWishlists;
         return view('user.liquor.show')->with("viewData", $viewData);
     }
 
     public function search(Request $request)
     {
         $viewData = [];
-        $viewData['title'] = __('messages.shop.title'); 
+        $viewData["title"] = __('messages.shop.title');
         $searchBar = $request->get('searchBar');
-        $liquor = Liquor::where('liquor_type','LIKE','%'.$searchBar.'%')->orWhere('brand','LIKE','%'.$searchBar.'%')->get();
-        $viewData['liquors'] = $liquor;
-        return view('user.liquor.search')->with("viewData", $viewData);
+        $liquors = Liquor::where('liquor_type', 'LIKE', '%' . $searchBar . '%')->orWhere('brand', 'LIKE', '%' . $searchBar . '%')->get();
+        $viewData["liquors"] = $liquors;
+        return view('user.liquor.index')->with("viewData", $viewData);
     }
 }
