@@ -69,6 +69,7 @@ return [
     'liquor.price' => 'Price ($): ',
     'liquor.milliliters' => 'Milliliters (ml): ',
     'liquor.presentation' => 'Presentation: ',
+    'liquor.stock' => 'Stock: ',
 
     //Comments
     'comment.createComments' => 'Add a Comment',
