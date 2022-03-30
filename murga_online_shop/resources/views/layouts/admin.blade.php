@@ -23,7 +23,7 @@
             <ul class="nav flex-column">
                 <li><a href="{{ route('admin.liquor.create') }}"
                         class="nav-link text-white">{{ __('messages.admin.createLiquors') }}</a></li>
-                <li><a href="#" class="nav-link text-white">{{ __('messages.admin.manageLiquors') }}</a></li>
+                <li><a href="{{ route('admin.liquor.index') }}" class="nav-link text-white">{{ __('messages.admin.manageLiquors') }}</a></li>
                 <li><a href="{{ route('admin.customer.index') }}"
                     class="nav-link text-white">{{ __('messages.admin.customer.manage') }}</a></li>
                 <li><a href="{{ route('admin.customer.setAdmin') }}"
