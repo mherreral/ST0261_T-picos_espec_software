@@ -32,8 +32,10 @@ class WishlistController extends Controller
     public function show($id)
     {
         $viewData = [];
-        $wishlist = Wishlist::findOrFail($id);
-        $viewData["title"] = $wishlist->getName();
+        $wishlist = Wishlist::findOrFail($id)->with('items')->get();
+        dd($wishlist);
+        //$viewData["title"] = $wishlist->getName();
+        $viewData["title"] = "uwu";
         $viewData["wishlist"] = $wishlist;
         return view('user.wishlist.show')->with("viewData", $viewData);
     }
@@ -105,7 +107,7 @@ class WishlistController extends Controller
         $item = new Item();
         $item->setQuantity($quantity);
         $item->setLiquorId($id);
-        $item->setWishlistId($request->wishlist);
+        $item->setWishlistId($request->wishlist->getId());
         $item->setSubtotal($subtotal);
         $item->save();
         $item->setLiquor($liquor);

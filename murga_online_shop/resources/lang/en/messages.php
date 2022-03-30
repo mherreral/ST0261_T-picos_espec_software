@@ -50,12 +50,16 @@ return [
     'liquor.wishlist' => 'Wishlist',
     'wishlist.add' => 'Add to wishlist',
     'liquor.search' => 'Search liquor',
+    'liquor.price' => 'Price ($):',
+    'liquor.milliliters' => 'Milliliters (ml):',
+    'liquor.presentation' => 'Presentation:',
 
     //Comments
     'comment.createComments' => 'Add a Comment',
     'comment.saveCommentsSuccess' => 'Comment added successfully',
     'comment.createCommentDescription' => 'CommentDescription',
     'comment.score' => 'Score',
+    'comment.sendComment' => 'Send comment',
     
     //Wishlis
     'wishlist.title' => 'Wishlists - LA MURGA',

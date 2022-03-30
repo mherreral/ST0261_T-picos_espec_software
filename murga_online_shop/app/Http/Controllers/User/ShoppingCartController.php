@@ -18,7 +18,7 @@ class ShoppingCartController extends Controller
 
         $wishlistsInSession = $request->session()->get("wishlists");
         if ($wishlistsInSession) {
-            $wishlistsInCart = Wishlist::findMany(array_keys($wishlistsInSession));
+            $wishlistsInCart = Wishlist::findMany(array_keys($wishlistsInSession))->with('items')->get();
             $total = Wishlist::getWishlistTotal($wishlistsInCart);
         }
 

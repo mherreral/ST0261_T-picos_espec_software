@@ -44,15 +44,4 @@ class LiquorController extends Controller
         $viewData["liquors"] = $liquors;
         return view('user.liquor.index')->with("viewData", $viewData);
     }
-
-    public function save(Request $request, $id)
-    {
-        $comment = new Comment();
-        $comment->setDescription($request->description);
-        $comment->setScore($request->score);
-        $comment->setCustomer(Auth::id());
-        $comment->setLiquor($id);
-        $comment->save();
-        return back()->with("alert", __('messages.comment.saveCommentsSuccess'));
-    }
 }

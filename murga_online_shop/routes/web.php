@@ -82,7 +82,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/cart/delete', 'App\Http\Controllers\User\ShoppingCartController@delete')->name('user.shoppingCart.delete');
 
     //Comments
-    Route::post('/comment/save/{id}', 'App\Http\Controllers\User\LiquorController@save')->name("user.comment.save");
+    Route::get('/comment/create/{id}', 'App\Http\Controllers\User\CommentController@createComment')->name("user.comment.create");
+    Route::post('/comment/save/{id}', 'App\Http\Controllers\User\CommentController@saveComment')->name("user.comment.save");
 });
 
 Route::get('locale/{locale}', 'App\Http\Controllers\LocalizationController@locale')->name('locale');
