@@ -6,6 +6,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use App\Models\Liquor;
 
 class Comment extends Model
 {
@@ -65,8 +67,29 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getCustomer()
+    {
+        return $this->customer();
+    }
+
+    public function setCustomer($customer)
+    {
+        $this->customer_id = $customer;
+    }
+
     public function liquor()
     {
         return $this->belongsTo(Liquor::class);
+    }
+
+    public function getLiquor()
+    {
+        return $this->liquor();
+    }
+
+    public function setLiquor($liquor)
+    {
+        $this->liquor_id = $liquor;
     }
 }

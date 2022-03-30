@@ -17,7 +17,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($wishlist->items as $item)
+                        @foreach ($wishlist['items'] as $item)
                             <tr>
                                 <td>{{ $item->liquor->getLiquorType() }} {{ $item->liquor->getBrand() }}</td>
                                 <td>{{ $item->getQuantity() }}</td>
