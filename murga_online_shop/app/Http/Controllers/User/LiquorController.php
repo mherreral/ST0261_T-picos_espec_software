@@ -32,6 +32,10 @@ class LiquorController extends Controller
         }
         $viewData["title"] = $liquor->getLiquorType() . $liquor->getBrand();
         $viewData["liquor"] = $liquor;
+        $comments = $liquor->getComments();
+        $viewData["comments"] = $comments;
+        $mean = $comments->sum('score') / $comments->count();
+        $viewData["mean"] = $mean;
         $viewData["wishlists"] = $userWishlists;
         return view('user.liquor.show')->with("viewData", $viewData);
     }
