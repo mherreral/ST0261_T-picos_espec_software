@@ -7,6 +7,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Liquor;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class LiquorController extends Controller
@@ -22,7 +23,7 @@ class LiquorController extends Controller
     public function show($id)
     {
         $viewData = [];
-        $liquor = Liquor::findOrFail($id);
+        $liquor = Liquor::where('id', $id)->with('comments')->get()[0];
         $loggedUser = Auth::user();
         $userWishlists = [];
         foreach ($loggedUser->wishlists as $wishlist) {

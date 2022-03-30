@@ -58,6 +58,16 @@ Route::middleware('admin')->group(function () {
         '/admin/customer/{id}',
         'App\Http\Controllers\Admin\CustomerController@show'
     )->name("admin.customer.show");
+
+    Route::get(
+        '/admin/liquor/create',
+        'App\Http\Controllers\Admin\LiquorController@create'
+    )->name("admin.liquor.create");
+
+    Route::post(
+        '/admin/liquor/save',
+        'App\Http\Controllers\Admin\LiquorController@save'
+    )->name("admin.liquor.save");
 });
 
 //User
@@ -80,6 +90,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/cart', 'App\Http\Controllers\User\ShoppingCartController@index')->name("user.shoppingCart.index");
     Route::get('/cart/purchase', 'App\Http\Controllers\User\ShoppingCartController@purchase')->name('user.shoppingCart.purchase');
     Route::get('/cart/delete', 'App\Http\Controllers\User\ShoppingCartController@delete')->name('user.shoppingCart.delete');
+
+    //Comments
+    Route::get('/comment/create/{id}', 'App\Http\Controllers\User\CommentController@createComment')->name("user.comment.create");
+    Route::post('/comment/save/{id}', 'App\Http\Controllers\User\CommentController@saveComment')->name("user.comment.save");
 });
 
 Route::get('locale/{locale}', 'App\Http\Controllers\LocalizationController@locale')->name('locale');

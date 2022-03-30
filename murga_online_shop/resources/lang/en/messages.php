@@ -24,7 +24,7 @@ return [
 
     //Admin
     'admin.title' => 'Admin panel',
-    'admin.createLiquors' => 'Create liquor',
+    'admin.createLiquors' => 'Create Liquor',
     'admin.manageLiquors' => 'Manage liquors',
     'admin.manageSetAdmin' => 'Set Admin User',
     'admin.manageDeleteCustomer' => 'Delete Customer',
@@ -41,6 +41,14 @@ return [
     'admin.goBackHome' => 'Go back to the administration panel',
     'admin.name' => ':name',
     'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.',
+    'admin.createLiquorsType' => 'EnterType',
+    'admin.createLiquorsBrand' => 'EnterBrand',
+    'admin.createLiquorsPrice' => 'EnterPrice',
+    'admin.createLiquorsStock' => 'EnterStock',
+    'admin.createLiquorsPresentation' => 'EnterPresentation',
+    'admin.createLiquorsMilliliters' => 'EnterMilliliters',
+    'admin.createLiquorsImage' => 'Image',
+    'admin.saveLiquorsSuccess' => 'Object Created Successfully',
 
     //Shop
     'shop.title' => 'Liquors shop',
@@ -50,8 +58,19 @@ return [
     'liquor.wishlist' => 'Wishlist',
     'wishlist.add' => 'Add to wishlist',
     'liquor.search' => 'Search liquor',
+    'liquor.price' => 'Price ($): ',
+    'liquor.milliliters' => 'Milliliters (ml): ',
+    'liquor.presentation' => 'Presentation: ',
+
+    //Comments
+    'comment.createComments' => 'Add a Comment',
+    'comment.saveCommentsSuccess' => 'Comment added successfully',
+    'comment.createCommentDescription' => 'CommentDescription',
+    'comment.score' => 'Score',
+    'comment.sendComment' => 'Send comment',
     
-    //Wishlis
+  
+    //Wishlist
     'wishlist.title' => 'Wishlists - LA MURGA',
     'wishlist.create' => 'Create wishlist',
     'wishlist.name' => 'Enter wishlist name',
