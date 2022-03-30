@@ -3,8 +3,8 @@
 @section('title', $viewData['title'])
 @section('content')
     <div class="row">
-        <form action="{{ route('user.liquor.search') }}" type="get" role="search">
-            {{ csrf_field() }}
+        <form method="POST" action="{{ route('user.liquor.search') }}">
+            @csrf
             <div class="input-group">
                 <input type="text" class="form-control" name="searchBar" placeholder={{ __('messages.liquor.search') }}>
                 <span class="input-group-btn">
@@ -19,7 +19,7 @@
                 <select name="liquorType" class="btn btn-primary">
                     <option value='NA'>Select</option>
                     @foreach ($viewData['liquorTypes'] as $liquor)
-                        <option value={{ $liquor->getLiquorType() }}>{{ $liquor->getLiquorType() }}</option>
+                        <option value='{{ $liquor->getLiquorType() }}'>{{ $liquor->getLiquorType() }}</option>
                     @endforeach
                 </select>
                 <input type="submit" class="btn btn-primary" value="Send" />

@@ -129,8 +129,29 @@ class Liquor extends Model
     {
         return $this->hasMany(Item::class);
     }
+
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    public function setItems($items)
+    {
+        $this->items = $items;
+    }
+
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
     }
 }

@@ -61,6 +61,7 @@ return [
     //Liquor
     'liquor.quantity' => 'Quantity',
     'liquor.wishlist' => 'Wishlist',
+    'liquor.commentsMean' => 'Mean Score',
     'wishlist.add' => 'Add to wishlist',
     'liquor.search' => 'Search liquor',
     'liquor.priceASC' => 'Price Ascendent',
@@ -75,7 +76,7 @@ return [
     'comment.createCommentDescription' => 'CommentDescription',
     'comment.score' => 'Score',
     'comment.sendComment' => 'Send comment',
-    
+
     //Wishlist
     'wishlist.title' => 'Wishlists - LA MURGA',
     'wishlist.create' => 'Create wishlist',
