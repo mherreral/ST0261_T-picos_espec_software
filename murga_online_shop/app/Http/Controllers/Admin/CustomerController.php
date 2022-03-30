@@ -12,7 +12,6 @@ class CustomerController extends Controller
     {
         $viewData = [];
         $viewData["title"] = __('messages.admin.customer.indexTitle');
-        $viewData["subtitle"] = __('messages.admin.customer.indexSubTitle');
         $viewData["customers"] = User::all();
         return view('admin.customer.index')->with("viewData", $viewData);
     }
@@ -24,7 +23,6 @@ class CustomerController extends Controller
         if ($aux <= User::count()) {
             $customer = User::findOrFail($id);
             $viewData["title"] = $customer->getName() . __('messages.admin.customer.showTitle');
-            $viewData["subtitle"] = $customer->getName() . __('messages.admin.customer.showSubTitle');;
             $viewData["picture"] = "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png";
             $viewData["customer"] = $customer;
             return view('admin.customer.show')->with("viewData", $viewData);
