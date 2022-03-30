@@ -50,6 +50,10 @@ return [
     'admin.createLiquorsImage' => 'Image',
     'admin.saveLiquorsSuccess' => 'Liquor Created Successfully',
     'admin.deleteLiquorsSuccess' => 'Liquor Deleted Successfully',
+    'admin.delete.liquor' => 'Delete',
+    'admin.update.liquor' => 'Update',
+    'admin.editeLiquors' => "Edit liquor",
+    'admin.updateLiquorsSuccess' => 'Liquor updated Successfully',
 
     //Shop
     'shop.title' => 'Liquors shop',

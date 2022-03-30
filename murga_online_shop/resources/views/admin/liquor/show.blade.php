@@ -1,5 +1,5 @@
 <!-- Authors: Ana Arango -->
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', $viewData['title'])
 @section('content')
     <div class="card mb-3">
@@ -23,6 +23,9 @@
     </div>
     <form method="post" action="{{ route('admin.liquor.delete', ['id' => $viewData['liquor']->getId()]) }}">
         @csrf
-        <input class="btn btn-outline-danger" type="submit" value="Delete">
+        <input class="btn btn-outline-danger" type="submit" value="{{ __('messages.admin.delete.liquor') }}">
     </form>
+    <a
+        href="{{ route('admin.liquor.edit', $viewData['liquor']->getId()) }}"><button>{{ __('messages.admin.update.liquor') }}</button></a>
+
 @endsection
