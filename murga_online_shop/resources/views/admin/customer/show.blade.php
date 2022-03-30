@@ -28,7 +28,7 @@
                                 <input type="hidden" name="adminId" value={{ $viewData['customer']->getId() }} />
                                 <input type="hidden" name="adminFlag" value="1" />
                                 <input class="mt-2 btn bg-primary text-white"
-                                    value="{{ __('messages.admin.manageSetAdmin') }}" type="submit"></input>
+                                    value="{{ __('messages.admin.customer.setAdmin') }}" type="submit"></input>
 
                             </li>
                     </form>
@@ -37,7 +37,7 @@
                         <li>
                             <input type="hidden" name="deleteId" value={{ $viewData['customer']->getId() }} />
                             <input class="mt-2 btn bg-primary text-white"
-                                value="{{ __('messages.admin.manageDeleteCustomer') }}" type="submit"></input>
+                                value="{{ __('messages.admin.customer.deleteCustomer') }}" type="submit"></input>
 
                         </li>
                         </ul>

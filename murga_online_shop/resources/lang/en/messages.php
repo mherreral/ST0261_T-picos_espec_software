@@ -26,10 +26,10 @@ return [
     'admin.title' => 'Admin panel',
     'admin.createLiquors' => 'Create liquor',
     'admin.manageLiquors' => 'Manage liquors',
-    'admin.manageSetAdmin' => 'Set Admin User',
-    'admin.manageDeleteCustomer' => 'Delete Customer',
-    'admin.customer.indexTitle' => 'Admin Customers',
-    'admin.customer.indexSubTitle' => 'List of Customers',
+    'admin.customer.setAdmin' => 'Set Admin User',
+    'admin.customer.deleteCustomer' => 'Delete Customer',
+    'admin.customer.manage' => 'Manage Customers',
+    'admin.customer.listOf' => 'List of Customers',
     'admin.customer.showTitle' => ' Murga',
     'admin.customer.showSubTitle' => ' Information',
     'admin.customer.setAdminTitle' => 'Set Admin status',
@@ -50,7 +50,9 @@ return [
     'liquor.wishlist' => 'Wishlist',
     'wishlist.add' => 'Add to wishlist',
     'liquor.search' => 'Search liquor',
-    
+    'liquor.priceASC' => 'Price Ascendent',
+    'liquor.priceDESC' => 'Price Descendent',
+
     //Wishlis
     'wishlist.title' => 'Wishlists - LA MURGA',
     'wishlist.create' => 'Create wishlist',

@@ -11,8 +11,8 @@ class CustomerController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["title"] = __('messages.admin.customer.indexTitle');
-        $viewData["subtitle"] = __('messages.admin.customer.indexSubTitle');
+        $viewData["title"] = __('messages.admin.customer.manage');
+        $viewData["subtitle"] = __('messages.admin.customer.listOf');
         $viewData["customers"] = User::all();
         return view('admin.customer.index')->with("viewData", $viewData);
     }
@@ -20,8 +20,8 @@ class CustomerController extends Controller
     public function show($id)
     {
         $viewData = [];
-        $aux = $id - 1;
-        if ($aux <= User::count()) {
+        $customer = User::find($id);
+        if ($customer !== null) {
             $customer = User::findOrFail($id);
             $viewData["title"] = $customer->getName() . __('messages.admin.customer.showTitle');
             $viewData["subtitle"] = $customer->getName() . __('messages.admin.customer.showSubTitle');;
