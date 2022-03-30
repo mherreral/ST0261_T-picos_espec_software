@@ -14,6 +14,11 @@
                 </span>
             </div>
         </form>
+        @if (session()->has('alert'))
+            <ul class="alert alert-success list-unstyled">
+                <li>{{ session()->get('alert') }}</li>
+            </ul>
+        @endif
         @foreach ($viewData['liquors'] as $liquor)
             <div class="col-md-4 col-lg-3 mb-2">
                 <div class="card">
