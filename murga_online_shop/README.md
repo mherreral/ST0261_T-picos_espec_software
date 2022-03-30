@@ -37,5 +37,7 @@ firefox http://127.0.0.1:8000
 ```
 
 
-
 ### Generar datos <a name="gendata"></a>
+
+Para generar datos del proyecto está el archivo llamado la_murga_os.sql en el directorio raíz del dispositivo,
+las imágenes correspondientes de los licores están ya cargadas en public/img
