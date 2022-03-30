@@ -6,12 +6,23 @@
         <form action="{{ route('user.liquor.search') }}" type="get" role="search">
             {{ csrf_field() }}
             <div class="input-group">
-                <input type="text" class="form-control" name="searchBar"
-                    placeholder={{ __('messages.liquor.search') }}> <span class="input-group-btn">
+                <input type="text" class="form-control" name="searchBar" placeholder={{ __('messages.liquor.search') }}>
+                <span class="input-group-btn">
                     <button type="submit" class="btn btn-default">
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </span>
+                <select name="orderBy" class="btn btn-primary">
+                    <option value='asc'>{{ __('messages.liquor.priceASC') }}</option>
+                    <option value='desc'>{{ __('messages.liquor.priceDESC') }}</option>
+                </select>
+                <select name="liquorType" class="btn btn-primary">
+                    <option value='NA'>Select</option>
+                    @foreach ($viewData['liquorTypes'] as $liquor)
+                        <option value={{ $liquor->getLiquorType() }}>{{ $liquor->getLiquorType() }}</option>
+                    @endforeach
+                </select>
+                <input type="submit" class="btn btn-primary" value="Send" />
             </div>
         </form>
         @foreach ($viewData['liquors'] as $liquor)
@@ -20,7 +31,8 @@
                     <img src="{{ asset($liquor->getImage()) }}" class="card-img-top img-card">
                     <div class="card-body text-center">
                         <a href="{{ route('user.liquor.show', ['id' => $liquor->getId()]) }}"
-                            class="btn bg-primary text-white">{{ $liquor->getLiquorType() }} {{ $liquor->getBrand() }}</a>
+                            class="btn bg-primary text-white">{{ $liquor->getLiquorType() }}
+                            {{ $liquor->getBrand() }}</a>
                     </div>
                 </div>
             </div>
