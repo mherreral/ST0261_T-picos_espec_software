@@ -13,7 +13,7 @@ class LiquorController extends Controller
     public function create()
     {
         $viewData = [];
-        $viewData['title'] = __('messages.admin.createLiquors');
+        $viewData["title"] = __('messages.admin.createLiquors');
         return view('admin.liquor.create')->with("viewData", $viewData);
     }
 
