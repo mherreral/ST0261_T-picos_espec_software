@@ -1,5 +1,5 @@
 <!-- Authors: Ana Arango, Manuela Herrera López -->
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', $viewData['title'])
 @section('content')
     <div class="container">
@@ -44,7 +44,8 @@
                                 value="{{ old('milliliters') }}" />
                             <div class="col">
                                 <div class="mb-3 row">
-                                    <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">{{ __('messages.admin.createLiquorsImage') }}</label>
+                                    <label
+                                        class="col-lg-2 col-md-6 col-sm-12 col-form-label">{{ __('messages.admin.createLiquorsImage') }}</label>
                                     <div class="col-lg-10 col-md-6 col-sm-12">
                                         <input class="form-control" type="file" name="image">
                                     </div>
