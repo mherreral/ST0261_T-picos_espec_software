@@ -74,9 +74,14 @@ class LiquorController extends Controller
     public function update(Request $request, $id)
     {
         $liquor = Liquor::findOrFail($id);
-        $liquor->setPrice($request->price);
-        $liquor->setStock($request->stock);
-        $liquor->save();
+        if ($request->price) {
+            $liquor->setPrice($request->price);
+            $liquor->save();
+        }
+        if ($request->stock) {
+            $liquor->setStock($request->stock);
+            $liquor->save();
+        }
 
         if ($request->hasFile('image')) {
             $imageName = $liquor->getId() . "." . $request->file('image')->extension();

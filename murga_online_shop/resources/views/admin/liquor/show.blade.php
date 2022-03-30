@@ -17,6 +17,8 @@
                         {{ __('messages.liquor.milliliters') }}{{ $viewData['liquor']->getMilliliters() }}ml</p>
                     <p class="card-text">
                         {{ __('messages.liquor.presentation') }}{{ $viewData['liquor']->getPresentation() }}</p>
+                    <p class="card-text">
+                        {{ __('messages.liquor.stock') }}{{ $viewData['liquor']->getStock() }}</p>
                 </div>
             </div>
         </div>
