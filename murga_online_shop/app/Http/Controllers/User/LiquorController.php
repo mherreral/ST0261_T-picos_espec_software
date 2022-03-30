@@ -46,6 +46,8 @@ class LiquorController extends Controller
         $liquorType = $request->get('liquorType');
         if ($liquorType == 'NA') {
             $liquors = Liquor::where('liquor_type', 'LIKE', '%' . $searchBar . '%')->orWhere('brand', 'LIKE', '%' . $searchBar . '%')->orderBy('price', $orderBy)->get();
+        } else if ($searchBar == '') {
+            $liquors = Liquor::where('liquor_type', $liquorType)->orderBy('price', $orderBy)->get();
         } else {
             $liquors = Liquor::where('liquor_type', $liquorType)->orWhere('brand', 'LIKE', '%' . $searchBar . '%')->orderBy('price', $orderBy)->get();
         }
