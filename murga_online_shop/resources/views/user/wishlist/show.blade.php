@@ -9,7 +9,7 @@
                     <h5 class="card-title">
                         <b> {{ $viewData['wishlist']->getName() }} </b>
                     </h5>
-                    @foreach ($viewData['wishlist']['items'] as $item)
+                    @foreach ($viewData['items'] as $item)
                         - {{ __('messages.wishlist.liquor') }} {{ $item->liquor->getLiquorType() }}
                         {{ $item->liquor->getBrand() }} -
                         {{ __('messages.wishlist.liquor.quantity') }} {{ $item->getQuantity() }}<br />

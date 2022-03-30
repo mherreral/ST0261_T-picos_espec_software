@@ -5,7 +5,7 @@
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ $viewData['liquor']->getImage() }}" class="img-fluid rounded-start">
+                <img src="{{ asset('/img/' . $viewData['liquor']->getImage()) }}" class="img-fluid rounded-start">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -14,33 +14,37 @@
                     </h5>
                     <p class="card-text">{{ __('messages.liquor.price') }}{{ $viewData['liquor']->getPrice() }}</p>
                     <p class="card-text">
-                        {{ __('messages.liquor.millilietrs') }}{{ $viewData['liquor']->getMilliliters() }}ml</p>
+                        {{ __('messages.liquor.milliliters') }}{{ $viewData['liquor']->getMilliliters() }}ml</p>
                     <p class="card-text">
                         {{ __('messages.liquor.presentation') }}{{ $viewData['liquor']->getPresentation() }}</p>
                     <p class="card-text">
-                    <form method="POST" action="{{ route('user.wishlist.add', ['id' => $viewData['liquor']->getId()]) }}">
-                        <div class="row">
-                            @csrf
-                            <div class="col-auto">
-                                <div class="input-group col-auto">
-                                    <div class="input-group-text">{{ __('messages.liquor.quantity') }}</div>
-                                    <input type="number" min="1" max="10" class="form-control quantity-input"
-                                        name="quantity" value="1">
-                                    <div class="input-group-text">{{ __('messages.liquor.wishlist') }}</div>
-                                    <select name="wishlist">
-                                        @foreach ($viewData['wishlists'] as $wishlist)
-                                            <option value="{{ $wishlist->getId() }}">{{ $wishlist->getName() }}
-                                            </option>
-                                        @endforeach
-                                    </select>
+                        @if (count($viewData['wishlists']) > 0)
+                            <form method="POST"
+                                action="{{ route('user.wishlist.add', ['id' => $viewData['liquor']->getId()]) }}">
+                                <div class="row">
+                                    @csrf
+                                    <div class="col-auto">
+                                        <div class="input-group col-auto">
+                                            <div class="input-group-text">{{ __('messages.liquor.quantity') }}</div>
+                                            <input type="number" min="1" max="10" class="form-control quantity-input"
+                                                name="quantity" value="1">
+                                            <div class="input-group-text">{{ __('messages.liquor.wishlist') }}</div>
+                                            <select name="wishlist">
+                                                @foreach ($viewData['wishlists'] as $wishlist)
+                                                    <option value="{{ $wishlist->getId() }}">
+                                                        {{ $wishlist->getName() }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn bg-primary text-white"
+                                            type="submit">{{ __('messages.wishlist.add') }}</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-auto">
-                                <button class="btn bg-primary text-white"
-                                    type="submit">{{ __('messages.wishlist.add') }}</button>
-                            </div>
-                        </div>
-                    </form>
+                            </form>
+                        @endif
                     </p>
                 </div>
             </div>
