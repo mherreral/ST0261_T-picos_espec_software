@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["title"] = __('admin.title');
+        $viewData["title"] = __('messages.admin.title');
         return view('admin.home.index')->with("viewData", $viewData);
     }
 }

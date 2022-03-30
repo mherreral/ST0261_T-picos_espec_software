@@ -25,11 +25,11 @@
                         class="nav-link text-white">{{ __('messages.admin.createLiquors') }}</a></li>
                 <li><a href="#" class="nav-link text-white">{{ __('messages.admin.manageLiquors') }}</a></li>
                 <li><a href="{{ route('admin.customer.index') }}"
-                        class="nav-link text-white">{{ __('messages.admin.customer.indexTitle') }}</a></li>
+                    class="nav-link text-white">{{ __('messages.admin.customer.manage') }}</a></li>
                 <li><a href="{{ route('admin.customer.setAdmin') }}"
-                        class="nav-link text-white">{{ __('messages.admin.manageSetAdmin') }}</a></li>
+                        class="nav-link text-white">{{ __('messages.admin.customer.setAdmin') }}</a></li>
                 <li><a href="{{ route('admin.customer.delete') }}"
-                        class="nav-link text-white">{{ __('messages.admin.manageDeleteCustomer') }}</a></li>
+                        class="nav-link text-white">{{ __('messages.admin.customer.deleteCustomer') }}</a></li>
                 <li>
                     <a href="{{ route('user.home.index') }}"
                         class="mt-2 btn bg-primary text-white">{{ __('messages.home.goBackHome') }}</a>

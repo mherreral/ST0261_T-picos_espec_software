@@ -17,6 +17,7 @@ class LiquorController extends Controller
         $viewData = [];
         $viewData["title"] = __('messages.shop.title');
         $viewData["liquors"] = Liquor::all();
+        $viewData["liquorTypes"] = Liquor::distinct()->orderBy('liquor_type', 'asc')->get('liquor_type');
         return view('user.liquor.index')->with("viewData", $viewData);
     }
 
@@ -39,9 +40,18 @@ class LiquorController extends Controller
     {
         $viewData = [];
         $viewData["title"] = __('messages.shop.title');
+
         $searchBar = $request->get('searchBar');
-        $liquors = Liquor::where('liquor_type', 'LIKE', '%' . $searchBar . '%')->orWhere('brand', 'LIKE', '%' . $searchBar . '%')->get();
+        $orderBy = $request->get('orderBy');
+        $liquorType = $request->get('liquorType');
+        if ($liquorType == 'NA') {
+            $liquors = Liquor::where('liquor_type', 'LIKE', '%' . $searchBar . '%')->orWhere('brand', 'LIKE', '%' . $searchBar . '%')->orderBy('price', $orderBy)->get();
+        } else {
+            $liquors = Liquor::where('liquor_type', $liquorType)->orWhere('brand', 'LIKE', '%' . $searchBar . '%')->orderBy('price', $orderBy)->get();
+        }
         $viewData["liquors"] = $liquors;
+        $viewData["liquorTypes"] = Liquor::distinct()->orderBy('liquor_type', 'asc')->get('liquor_type');
+
         return view('user.liquor.index')->with("viewData", $viewData);
     }
 }

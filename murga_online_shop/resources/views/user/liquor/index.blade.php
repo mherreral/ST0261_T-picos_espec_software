@@ -12,6 +12,17 @@
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </span>
+                <select name="orderBy" class="btn btn-primary">
+                    <option value='asc'>{{ __('messages.liquor.priceASC') }}</option>
+                    <option value='desc'>{{ __('messages.liquor.priceDESC') }}</option>
+                </select>
+                <select name="liquorType" class="btn btn-primary">
+                    <option value='NA'>Select</option>
+                    @foreach ($viewData['liquorTypes'] as $liquor)
+                        <option value={{ $liquor->getLiquorType() }}>{{ $liquor->getLiquorType() }}</option>
+                    @endforeach
+                </select>
+                <input type="submit" class="btn btn-primary" value="Send" />
             </div>
         </form>
         @if (session()->has('alert'))

@@ -11,7 +11,7 @@ class CustomerController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["title"] = __('messages.admin.customer.indexTitle');
+        $viewData["title"] = __('messages.admin.customer.manage');
         $viewData["customers"] = User::all();
         return view('admin.customer.index')->with("viewData", $viewData);
     }
@@ -19,8 +19,8 @@ class CustomerController extends Controller
     public function show($id)
     {
         $viewData = [];
-        $aux = $id - 1;
-        if ($aux <= User::count()) {
+        $customer = User::find($id);
+        if ($customer !== null) {
             $customer = User::findOrFail($id);
             $viewData["title"] = $customer->getName() . __('messages.admin.customer.showTitle');
             $viewData["picture"] = "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png";
