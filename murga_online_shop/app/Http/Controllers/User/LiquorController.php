@@ -36,7 +36,7 @@ class LiquorController extends Controller
         $viewData["comments"] = $comments;
         if ($comments->count() > 1) {
             $mean = $comments->sum('score') / $comments->count();
-            $viewData["mean"] = $mean;
+            $viewData["mean"] = round($mean, 1);
         } else {
             $viewData["mean"] = 0;
         }
