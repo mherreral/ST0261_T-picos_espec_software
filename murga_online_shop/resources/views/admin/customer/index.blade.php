@@ -1,6 +1,5 @@
-@extends('layouts.app')
-@section('title', $viewData['subtitle'])
-@section('subtitle', $viewData['subtitle'])
+@extends('layouts.admin')
+@section('title', $viewData['title'])
 @section('content')
     <div class="row">
         @foreach ($viewData['customers'] as $customer)
