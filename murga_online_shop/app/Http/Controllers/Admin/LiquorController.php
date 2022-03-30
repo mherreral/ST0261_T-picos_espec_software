@@ -10,6 +10,23 @@ use App\Models\Liquor;
 
 class LiquorController extends Controller
 {
+    public function index()
+    {
+        $viewData = [];
+        $viewData["title"] = __('messages.shop.title');
+        $viewData["liquors"] = Liquor::all();
+        return view('admin.liquor.index')->with("viewData", $viewData);
+    }
+
+    public function show($id)
+    {
+        $viewData = [];
+        $liquor = Liquor::findOrFail($id);
+        $viewData["title"] = $liquor->getLiquorType() . $liquor->getBrand();
+        $viewData["liquor"] = $liquor;
+        return view('admin.liquor.show')->with("viewData", $viewData);
+    }
+
     public function create()
     {
         $viewData = [];
@@ -36,5 +53,12 @@ class LiquorController extends Controller
             $liquor->save();
         }
         return back()->with("alert", __('messages.admin.saveLiquorsSuccess'));
+    }
+
+    public function delete($id)
+    {
+        $liquor = Liquor::findOrFail($id);
+        $liquor->delete();
+        return redirect()->route("admin.liquor.index")->with("alert", __('messages.admin.deleteLiquorsSuccess'));
     }
 }

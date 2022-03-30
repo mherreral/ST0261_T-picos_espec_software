@@ -68,6 +68,21 @@ Route::middleware('admin')->group(function () {
         '/admin/liquor/save',
         'App\Http\Controllers\Admin\LiquorController@save'
     )->name("admin.liquor.save");
+
+    Route::get(
+        '/admin/liquors',
+        'App\Http\Controllers\Admin\LiquorController@index'
+        )->name("admin.liquor.index");
+
+    Route::get(
+        '/admin/liquors/{id}',
+        'App\Http\Controllers\Admin\LiquorController@show'
+        )->name("admin.liquor.show");
+    
+    Route::post(
+        '/admin/liquors/delete/{id}',
+        'App\Http\Controllers\Admin\LiquorController@delete'
+        )->name("admin.liquor.delete");
 });
 
 //User
