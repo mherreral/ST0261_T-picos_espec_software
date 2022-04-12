@@ -15,7 +15,9 @@ class User extends Authenticatable
     use HasApiTokens, Notifiable;
 
     /**
-     * PRODUCT ATTRIBUTES
+     * USER ATTRIBUTES
+     * $this->attributes['created_at'] - date - contains the comment creation date
+     * $this->attributes['updated_at'] - date - contains the comment updated date
      * $this->attributes['id'] - int - contains the product primary key (id)
      * $this->attributes['birthDate'] - date - contains the user birthdate
      * $this->attributes['name'] - string - contains the user name
@@ -189,5 +191,22 @@ class User extends Authenticatable
     public function setWishlists($wishlists)
     {
         $this->wishlists = $wishlists;
+    }
+
+    public function getUpdatedDate()
+    {
+        return $this->attributes['updated_at'];
+    }
+    public function SetUpdatedDate($updated_at)
+    {
+        $this->attributes['updated_at'] = $updated_at;
+    }
+    public function getCreatedDate()
+    {
+        return $this->attributes['created_at'];
+    }
+    public function SetCreatedDate($created_at)
+    {
+        $this->attributes['created_at'] = $created_at;
     }
 }

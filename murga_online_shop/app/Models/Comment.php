@@ -12,9 +12,11 @@ use App\Models\Liquor;
 class Comment extends Model
 {
     /**
-     * PRODUCT ATTRIBUTES
+     * COMMENT ATTRIBUTES
      * $this->attributes['id'] - int - contains the comment primary key (id)
      * $this->attributes['description'] - string - contains the comment description
+     * $this->attributes['created_at'] - date - contains the comment creation date 
+     * $this->attributes['updated_at'] - date - contains the comment updated date 
      * $this->attributes['score'] - int - contains the score of the liquor
      * $this->attributes['customer'] - User - contains the user related to the comment
      * $this->attributes['liquor'] - Liquor - contains the related liquor
@@ -91,5 +93,22 @@ class Comment extends Model
     public function setLiquor($liquor)
     {
         $this->liquor_id = $liquor;
+    }
+
+    public function getUpdatedDate()
+    {
+        return $this->attributes['updated_at'];
+    }
+    public function SetUpdatedDate($updated_at)
+    {
+        $this->attributes['updated_at'] = $updated_at;
+    }
+    public function getCreatedDate()
+    {
+        return $this->attributes['created_at'];
+    }
+    public function SetCreatedDate($created_at)
+    {
+        $this->attributes['created_at'] = $created_at;
     }
 }
