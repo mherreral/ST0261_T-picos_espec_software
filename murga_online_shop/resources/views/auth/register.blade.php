@@ -76,7 +76,7 @@
 
                                 <div class="col-md-6">
                                     <input id="idNumber" type="text"
-                                        class="form-control @error('idNumber') is-invalid @enderror" name="idNumber"
+                                        class="form-control @error('idNumber') is-invalid @enderror" name="idNumber" value="{{ old('idNumber') }}"
                                         required autocomplete="idNumber">
 
                                     @error('idNumber')
@@ -93,7 +93,7 @@
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
-                                        class="form-control @error('address') is-invalid @enderror" name="address" required
+                                        class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required
                                         autocomplete="address">
 
                                     @error('address')
@@ -110,7 +110,7 @@
 
                                 <div class="col-md-6">
                                     <input id="birthDate" type="text"
-                                        class="form-control @error('birthDate') is-invalid @enderror" name="birthDate"
+                                        class="form-control @error('birthDate') is-invalid @enderror" name="birthDate" value="{{ old('birthDate') }}"
                                         required autocomplete="birthDate">
 
                                     @error('birthDate')
@@ -127,7 +127,7 @@
 
                                 <div class="col-md-6">
                                     <input id="phoneNumber" type="text"
-                                        class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber"
+                                        class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" value="{{ old('phoneNumber') }}"
                                         required autocomplete="phoneNumber">
 
                                     @error('phoneNumber')
