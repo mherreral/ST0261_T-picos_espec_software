@@ -23,6 +23,7 @@ Route::get('/', 'App\Http\Controllers\User\LiquorController@index')->name("user.
 
 //liquors
 Route::get('/liquors', 'App\Http\Controllers\User\LiquorController@index')->name("user.liquor.index");
+Route::get('/liquors/{id}', 'App\Http\Controllers\User\LiquorController@show')->name("user.liquor.show");
 
 // Auth needed
 
@@ -107,7 +108,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/wishlist/add/{id}', 'App\Http\Controllers\User\WishlistController@addItem')->name('user.wishlist.add');
 
     //Liquors
-    Route::get('/liquors/{id}', 'App\Http\Controllers\User\LiquorController@show')->name("user.liquor.show");
+    #Route::get('/liquors/{id}', 'App\Http\Controllers\User\LiquorController@show')->name("user.liquor.show");
     Route::post('/search', 'App\Http\Controllers\User\LiquorController@search')->name("user.liquor.search");
 
     //Cart
