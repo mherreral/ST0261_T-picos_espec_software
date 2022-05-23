@@ -13,6 +13,7 @@ return [
     'home.admin' => 'Admin panel',
     'home.shoppingCart' => 'Shopping cart',
     'home.goBackHome' => 'Go back to the home page',
+    'languages' => 'Languages',
 
     //Auth
     'auth.login' => 'Login',

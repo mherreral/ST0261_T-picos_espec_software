@@ -122,4 +122,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/comment/save/{id}', 'App\Http\Controllers\User\CommentController@saveComment')->name("user.comment.save");
 });
 
-Route::get('locale/{locale}', 'App\Http\Controllers\LocalizationController@locale')->name('locale');
+Route::get('lang/{locale}', 'App\Http\Controllers\LanguageController@switch')->name('language.switch');

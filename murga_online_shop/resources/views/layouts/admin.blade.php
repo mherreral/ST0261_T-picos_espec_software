@@ -1,7 +1,7 @@
 <!-- Retrieved from
     https://github.com/PracticalBooks/Practical-Laravel/blob/main/Chapter28/onlineStore/resources/views/layouts/admin.blade.php -->
 
-<html lang="en">
+<!doctype html>
 
 <head>
     <meta charset="utf-8" />
@@ -23,9 +23,10 @@
             <ul class="nav flex-column">
                 <li><a href="{{ route('admin.liquor.create') }}"
                         class="nav-link text-white">{{ __('messages.admin.createLiquors') }}</a></li>
-                <li><a href="{{ route('admin.liquor.index') }}" class="nav-link text-white">{{ __('messages.admin.manageLiquors') }}</a></li>
+                <li><a href="{{ route('admin.liquor.index') }}"
+                        class="nav-link text-white">{{ __('messages.admin.manageLiquors') }}</a></li>
                 <li><a href="{{ route('admin.customer.index') }}"
-                    class="nav-link text-white">{{ __('messages.admin.customer.manage') }}</a></li>
+                        class="nav-link text-white">{{ __('messages.admin.customer.manage') }}</a></li>
                 <li><a href="{{ route('admin.customer.setAdmin') }}"
                         class="nav-link text-white">{{ __('messages.admin.customer.setAdmin') }}</a></li>
                 <li><a href="{{ route('admin.customer.delete') }}"
