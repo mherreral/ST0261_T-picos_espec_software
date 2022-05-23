@@ -1,5 +1,4 @@
 <!doctype html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -23,6 +22,16 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="dropdown">
+                <button class="dropbtn">{{ __('messages.languages') }}</button>
+                <div class="dropdown-content">
+                    @foreach (config('app.available_locales') as $locale_name => $available_locale)
+                        <a
+                            href="{{ route('language.switch', ['locale' => $available_locale]) }}">{{ $locale_name }}</a>
+                    @endforeach
+                </div>
+            </div>
+
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link active" href="{{ route('user.liquor.index') }}">

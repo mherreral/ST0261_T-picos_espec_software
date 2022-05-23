@@ -13,7 +13,7 @@ return [
     'home.admin' => 'Panel de administración',
     'home.shoppingCart' => 'Carrito de compras',
     'home.goBackHome' => 'Volver a la página de inicio',
-    'languages' => 'Languages',
+    'languages' => 'Idiomas',
 
     //Auth
     'auth.login' => 'Ingreso',
