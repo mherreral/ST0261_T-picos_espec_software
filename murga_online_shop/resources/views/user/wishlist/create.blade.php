@@ -22,7 +22,7 @@
                             <input type="text" class="form-control mb-2"
                                 placeholder="{{ __('messages.wishlist.customers') }}" name="customers"
                                 value="{{ old('customers') }}" />
-                            <input type="submit" class="btn btn-primary" value="Send" />
+                            <input type="submit" class="btn bg-primary text-white" value="Send" />
                         </form>
                     </div>
                 </div>

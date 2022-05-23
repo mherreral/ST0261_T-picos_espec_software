@@ -23,5 +23,9 @@ return [
     'confirmPassword' => 'Confirm Password',
     'askForConfirmation' => 'Please confirm your password before continuing.',
     'resetPassword' => 'Reset Password',
-    'sendResetLink' => 'Send Password Reset Link'
+    'sendResetLink' => 'Send Password Reset Link',
+
+    //Placeholders
+    'email.placeholder' => 'example@example.com',
+    'birthdate.placeholder' => 'yyyy/mm/dd',
 ];

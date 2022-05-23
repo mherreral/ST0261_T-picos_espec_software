@@ -49,6 +49,13 @@ nav {
     margin-top: -6px;
 }
 
+.left-btn {
+  float: left; 
+}
+.right-btn { 
+  float: right; 
+}
+
  /* Dropdown Button */
 .dropbtn {
    background-color: #00c2cb;

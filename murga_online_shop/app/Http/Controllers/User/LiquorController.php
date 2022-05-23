@@ -7,6 +7,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Liquor;
+use Illuminate\Support\Facades\Http;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
@@ -21,15 +22,19 @@ class LiquorController extends Controller
         return view('user.liquor.index')->with("viewData", $viewData);
     }
 
+    static public function getRandomQuote()
+    {
+        $quote = Http::get('https://api.kanye.rest/')->json()['quote'];
+
+        return $quote;
+    }
+
     public function show($id)
     {
         $viewData = [];
         $liquor = Liquor::where('id', $id)->with('comments')->get()[0];
         $loggedUser = Auth::user();
         $userWishlists = [];
-        foreach ($loggedUser->wishlists as $wishlist) {
-            array_push($userWishlists, $wishlist);
-        }
         $viewData["title"] = $liquor->getLiquorType() . $liquor->getBrand();
         $viewData["liquor"] = $liquor;
         $comments = $liquor->getComments();
@@ -40,7 +45,14 @@ class LiquorController extends Controller
         } else {
             $viewData["mean"] = 0;
         }
-        $viewData["wishlists"] = $userWishlists;
+        if (Auth::check()) {
+            $userWishlists = [];
+            foreach ($loggedUser->wishlists as $wishlist) {
+                array_push($userWishlists, $wishlist);
+            }
+            $viewData["wishlists"] = $userWishlists;
+        }
+        $viewData["quote"] = LiquorController::getRandomQuote();
         return view('user.liquor.show')->with("viewData", $viewData);
     }
 
