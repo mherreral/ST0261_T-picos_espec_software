@@ -13,8 +13,8 @@
                 </div>
             </div>
         @endforeach
-        <div><a class="button-create"
-                href="{{ route('user.wishlist.create') }}"><button>{{ __('messages.wishlist.create') }}</button></a>
+        <div><a href="{{ route('user.wishlist.create') }}"><button
+                    class="btn bg-primary text-white">{{ __('messages.wishlist.create') }}</button></a>
         </div>
     </div>
 @endsection
