@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     /**
-     * PRODUCT ATTRIBUTES
+     * ITEM ATTRIBUTES
+     * $this->attributes['created_at'] - date - contains the comment creation date
+     * $this->attributes['updated_at'] - date - contains the comment updated date
      * $this->attributes['id'] - int - contains the item primary key (id)
      * $this->attributes['subtotal'] - float - contains the item subtotal (quantity*price)
      * $this->attributes['quantity'] - int - contains liquor quantity
@@ -114,5 +116,22 @@ class Item extends Model
     public function setWishlistId($wishlistId)
     {
         $this->attributes['wishlist_id'] = $wishlistId;
+    }
+
+    public function getUpdatedDate()
+    {
+        return $this->attributes['updated_at'];
+    }
+    public function SetUpdatedDate($updated_at)
+    {
+        $this->attributes['updated_at'] = $updated_at;
+    }
+    public function getCreatedDate()
+    {
+        return $this->attributes['created_at'];
+    }
+    public function SetCreatedDate($created_at)
+    {
+        $this->attributes['created_at'] = $created_at;
     }
 }
