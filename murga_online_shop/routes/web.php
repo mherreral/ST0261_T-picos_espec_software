@@ -123,3 +123,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('lang/{locale}', 'App\Http\Controllers\LanguageController@switch')->name('language.switch');
+
+//TeamApi
+Route::get('/beers', 'App\Http\Controllers\User\TeamApi@index')->name("user.teamApi.index");

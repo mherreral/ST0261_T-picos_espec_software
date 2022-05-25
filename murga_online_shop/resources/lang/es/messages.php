@@ -8,11 +8,12 @@ return [
     'home.store' => 'Tienda',
     'home.wishlist' => 'Wishlists',
     'home.copyright' => 'Derechos de autor - ',
-    'home.author' => 'Daniel Correa',
+    'home.author' => 'Manuela, Samuel, Ana',
     'home.welcome' => '¡Bienvenidos a nuestra tienda!',
     'home.admin' => 'Panel de administración',
     'home.shoppingCart' => 'Carrito de compras',
     'home.goBackHome' => 'Volver a la página de inicio',
+    'home.teamApi' => 'Productos Aliados',
     'languages' => 'Idiomas',
 
     //Auth
@@ -70,12 +71,15 @@ return [
     'liquor.search' => 'Buscar licor',
     'liquor.priceASC' => 'Precio ascendente',
     'liquor.priceDESC' => 'Precio descendente',
+    'liquor.select' => 'Seleccionar',
     'liquor.price' => 'Precio ($): ',
     'liquor.milliliters' => 'Mililitros (ml): ',
     'liquor.presentation' => 'Presentación: ',
     'liquor.stock' => 'Stock: ',
     'liquor.send' => 'Enviar',
     'liquor.select' => 'Seleccionar',
+    'liquor.kanyequote' => 'Frase random de KW: ',
+
 
     //Comments
     'comment.createComments' => 'Crear comentario',
@@ -110,4 +114,7 @@ return [
     'shoppingCart.delete' => 'Eliminar todos los productos del carrito',
     'shoppinCart.purchase.done' => 'La compra fue exitosa',
     'shoppingCart.error.outOfStock' => 'Lo sentimos, no tenemos suficiente stock para que completes la compra',
+
+    //TeamApi
+    'teamApi.title' => 'Tienda de cervezas',
 ];

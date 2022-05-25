@@ -8,11 +8,12 @@ return [
     'home.store' => 'Store',
     'home.wishlist' => 'Wishlists',
     'home.copyright' => 'Copyright -',
-    'home.author' => 'Daniel Correa',
+    'home.author' => 'Manuela, Samuel, Ana',
     'home.welcome' => 'Welcome to our store!',
     'home.admin' => 'Admin panel',
     'home.shoppingCart' => 'Shopping cart',
     'home.goBackHome' => 'Go back to the home page',
+    'home.teamApi' => 'Allied Products',
     'languages' => 'Languages',
 
     //Auth
@@ -70,6 +71,7 @@ return [
     'liquor.search' => 'Search liquor',
     'liquor.priceASC' => 'Price Ascendent',
     'liquor.priceDESC' => 'Price Descendent',
+    'liquor.select' => 'Select',
     'liquor.price' => 'Price ($): ',
     'liquor.milliliters' => 'Milliliters (ml): ',
     'liquor.presentation' => 'Presentation: ',
@@ -111,4 +113,7 @@ return [
     'shoppingCart.delete' => 'Remove all products from Cart',
     'shoppinCart.purchase.done' => 'The purchase was successful!',
     'shoppingCart.error.outOfStock' => 'We\'re sorry, we don\'t have enough stock of some liquors in your cart',
+
+    //TeamApi
+    'teamApi.title' => 'Beer Store',
 ];
