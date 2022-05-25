@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -12,8 +12,8 @@ class TeamApi extends Controller
     {
         $viewData = [];
         $viewData["title"] = __('messages.teamApi.title');
-        $beers = Http::get('http://thecraftbeer.tk/api/v1/beers')->json();
+        $viewData["beers"] = Http::get('http://thecraftbeer.tk/api/v1/beers')->json()["data"];
 
-        return view('user.api.index', compact('beers'))->with("viewData", $viewData);
+        return view('user.teamApi.index')->with("viewData", $viewData);
     }
 }
