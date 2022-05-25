@@ -17,7 +17,7 @@
                     <option value='desc'>{{ __('messages.liquor.priceDESC') }}</option>
                 </select>
                 <select name="liquorType" class="btn btn-primary">
-                    <option value='NA'>Select</option>
+                    <option value='NA'>{{ __('messages.liquor.select') }}</option>
                     @foreach ($viewData['liquorTypes'] as $liquor)
                         <option value='{{ $liquor->getLiquorType() }}'>{{ $liquor->getLiquorType() }}</option>
                     @endforeach
