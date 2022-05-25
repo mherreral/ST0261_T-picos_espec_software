@@ -65,20 +65,20 @@ class WishlistController extends Controller
         $customersText = $request->input('customers');
 
         if (strlen($customersText) != 0) {
-            # Add wishlist creator as owner
+            // Add wishlist creator as owner
             $customersEmail = $this->parseCustomerInput($customersText);
             $userEmail = Auth::user()->getEmail();
             array_push($customersEmail, $userEmail);
 
-            # Iterate over customers and associate them to wishlist
+            // Iterate over customers and associate them to wishlist
             for ($i = 0; $i < count($customersEmail); $i++) {
-                # Try to find a user registered with the emails
+                // Try to find a user registered with the emails
                 $customer = User::where('email', $customersEmail[$i])->get();
                 if ($customer->isEmpty()) {
                     $error = __('messages.wishlist.email.error');
                     return view('user.wishlist.error')->with("error", $error);
                 }
-                # Add user to customers array
+                // Add user to customers array
                 $newWishlist = Wishlist::find($wishlistId);
                 $newWishlist->customers()->attach($customer);
             }
