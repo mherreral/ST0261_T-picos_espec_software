@@ -13,6 +13,7 @@ return [
     'home.admin' => 'Admin panel',
     'home.shoppingCart' => 'Shopping cart',
     'home.goBackHome' => 'Go back to the home page',
+    'home.teamApi' => 'Allied Products',
     'languages' => 'Languages',
 
     //Auth
@@ -106,4 +107,7 @@ return [
     'shoppingCart.delete' => 'Remove all products from Cart',
     'shoppinCart.purchase.done' => 'The purchase was successful!',
     'shoppingCart.error.outOfStock' => 'We\'re sorry, we don\'t have enough stock of some liquors in your cart',
+
+    //TeamApi
+    'teamApi.title' => 'Beer Store',
 ];
