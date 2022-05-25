@@ -39,6 +39,9 @@ return [
     'admin.customer.saveSubTitle' => 'Operación exitosa',
     'admin.customer.standardFlag' => 'Estándar',
     'admin.customer.adminFlag' => 'Admin',
+    'admin.customer.localImage' => 'Imágen Local',
+    'admin.customer.webImage' => 'Imágen de la web',
+    'admin.customer.send' => 'Enviar',
     'admin.goBackHome' => 'Volver al panel de administración',
     'admin.name' => ':name',
     'admin.message' => 'Bienvenido al panel de admin, use la barra de navegación para hacer cambios',
@@ -71,6 +74,8 @@ return [
     'liquor.milliliters' => 'Mililitros (ml): ',
     'liquor.presentation' => 'Presentación: ',
     'liquor.stock' => 'Stock: ',
+    'liquor.send' => 'Enviar',
+    'liquor.select' => 'Seleccionar',
 
     //Comments
     'comment.createComments' => 'Crear comentario',

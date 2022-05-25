@@ -39,6 +39,9 @@ return [
     'admin.customer.saveSubTitle' => 'Successful operation',
     'admin.customer.standardFlag' => 'Standard',
     'admin.customer.adminFlag' => 'Admin',
+    'admin.customer.localImage' => 'Local Image',
+    'admin.customer.webImage' => 'Web Image',
+    'admin.customer.send' => 'Send',
     'admin.goBackHome' => 'Go back to the administration panel',
     'admin.name' => ':name',
     'admin.message' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.',
@@ -72,6 +75,8 @@ return [
     'liquor.presentation' => 'Presentation: ',
     'liquor.stock' => 'Stock: ',
     'liquor.kanyequote' => 'Cool KW random quote: ',
+    'liquor.send' => 'Send',
+    'liquor.select' => 'Select',
 
     //Comments
     'comment.createComments' => 'Add a Comment',
