@@ -36,7 +36,8 @@ class Liquor extends Model
 
     public static function validate($request)
     {
-        $request->validate([
+        $request->validate(
+            [
             "liquor_type" => "required|string",
             "brand" => "required|string",
             "price" => "required|numeric|gt:0",
@@ -44,7 +45,8 @@ class Liquor extends Model
             "presentation" => "required|string",
             "milliliters" => "required|int",
             "image" => "required|string"
-        ]);
+            ]
+        );
     }
 
     public function getId()

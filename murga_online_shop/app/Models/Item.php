@@ -26,9 +26,11 @@ class Item extends Model
 
     public static function validate($request)
     {
-        $request->validate([
+        $request->validate(
+            [
             "quantity" => "required|numeric|gt:0",
-        ]);
+            ]
+        );
     }
 
     public static function getItemSubtotal($price, $quantity)
