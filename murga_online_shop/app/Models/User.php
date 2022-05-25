@@ -42,7 +42,8 @@ class User extends Authenticatable
 
     public static function validate($request)
     {
-        $request->validate([
+        $request->validate(
+            [
             "birth_date" => "required|date|date_format:Y/m/d|before:-18 years",
             "name" => "required|string|max:255",
             "email" => "required|string|email|max:255|unique:users",
@@ -51,7 +52,8 @@ class User extends Authenticatable
             "address" => "required",
             "phone_number" => "required|numeric",
             "admin" => "min:0|max:1",
-        ]);
+            ]
+        );
     }
 
     /**

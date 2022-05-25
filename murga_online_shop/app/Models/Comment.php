@@ -28,10 +28,12 @@ class Comment extends Model
 
     public static function validate($request)
     {
-        $request->validate([
+        $request->validate(
+            [
             "description" => "required|string",
             "score" => "required|numeric",
-        ]);
+            ]
+        );
     }
 
     public function getId()

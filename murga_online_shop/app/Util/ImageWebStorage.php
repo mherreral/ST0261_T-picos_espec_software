@@ -4,7 +4,6 @@ namespace App\Util;
 
 use App\Interfaces\ImageStorage;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Auth;
 
 
 class ImageWebStorage implements ImageStorage

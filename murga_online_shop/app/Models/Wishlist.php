@@ -28,9 +28,11 @@ class Wishlist extends Model
 
     public static function validate($request)
     {
-        $request->validate([
+        $request->validate(
+            [
             "name" => "required|string|max:255",
-        ]);
+            ]
+        );
     }
 
     public static function getWishlistTotal($wishlistsInCart)
