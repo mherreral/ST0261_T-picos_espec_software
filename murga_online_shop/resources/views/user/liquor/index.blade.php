@@ -22,7 +22,7 @@
                         <option value='{{ $liquor->getLiquorType() }}'>{{ $liquor->getLiquorType() }}</option>
                     @endforeach
                 </select>
-                <input type="submit" class="btn btn-primary" value="Send" />
+                <input type="submit" class="btn btn-primary" value="{{ __('messages.liquor.send') }}" />
             </div>
         </form>
         @if (session()->has('alert'))

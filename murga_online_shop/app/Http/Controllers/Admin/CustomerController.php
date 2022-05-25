@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Interfaces\ImageStorage;
+
 
 class CustomerController extends Controller
 {
@@ -23,7 +25,7 @@ class CustomerController extends Controller
         if ($customer !== null) {
             $customer = User::findOrFail($id);
             $viewData["title"] = $customer->getName() . __('messages.admin.customer.showTitle');
-            $viewData["picture"] = "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png";
+            $viewData["picture"] = 'storage/' . $customer->getName() . $customer->getId() . '.png';
             $viewData["customer"] = $customer;
             return view('admin.customer.show')->with("viewData", $viewData);
         } else {
@@ -47,6 +49,7 @@ class CustomerController extends Controller
         return view('admin.customer.delete')->with("viewData", $viewData);
     }
 
+
     public function save(Request $request)
     {
         $viewData = [];
@@ -61,6 +64,10 @@ class CustomerController extends Controller
             $request = $request->only(["deleteId"]);
             $user = User::findOrFail($request["deleteId"]);
             $user->delete();
+        } else if ($request->has("storage")) {
+            $storage = $request->get('storage');
+            $storeInterface = app(ImageStorage::class, ['storage' => $storage]);
+            $storeInterface->store($request);
         }
 
         return view('admin.customer.save')->with("viewData", $viewData);
