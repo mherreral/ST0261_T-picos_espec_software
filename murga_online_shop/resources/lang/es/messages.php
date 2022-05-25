@@ -71,6 +71,7 @@ return [
     'liquor.milliliters' => 'Mililitros (ml): ',
     'liquor.presentation' => 'Presentación: ',
     'liquor.stock' => 'Stock: ',
+    'liquor.kanyequote' => 'Frase random de KW: ',
 
     //Comments
     'comment.createComments' => 'Crear comentario',

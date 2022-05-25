@@ -7,7 +7,7 @@ return [
     'email' => 'Email address',
     'password' => 'Password',
     'name' => 'Name',
-    'confirm' => 'Confirm assword',
+    'confirm' => 'Confirm password',
     'login' => 'Login',
     'remember' => 'Forgot your password?',
     'verification' => 'Verify Your Email Address',
