@@ -41,6 +41,8 @@
                         {{ __('messages.home.wishlist') }} </a>
                     <a class="nav-link active" href="{{ route('user.shoppingCart.index') }}">
                         {{ __('messages.home.shoppingCart') }} </a>
+                    <a class="nav-link active" href="{{ route('user.api.index') }}">
+                        {{ __('messages.home.teamApi') }} </a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @if (Auth::user() and Auth::user()->getAdmin() === 1)
                         <a class="nav-link active" href="{{ route('admin.home.index') }}">

@@ -13,6 +13,7 @@ return [
     'home.admin' => 'Panel de administración',
     'home.shoppingCart' => 'Carrito de compras',
     'home.goBackHome' => 'Volver a la página de inicio',
+    'home.teamApi' => 'Productos Aliados',
     'languages' => 'Idiomas',
 
     //Auth
@@ -105,4 +106,7 @@ return [
     'shoppingCart.delete' => 'Eliminar todos los productos del carrito',
     'shoppinCart.purchase.done' => 'La compra fue exitosa',
     'shoppingCart.error.outOfStock' => 'Lo sentimos, no tenemos suficiente stock para que completes la compra',
+
+    //TeamApi
+    'teamApi.title' => 'Tienda de cervezas',
 ];
