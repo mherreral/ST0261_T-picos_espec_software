@@ -17,12 +17,12 @@
                     <option value='desc'>{{ __('messages.liquor.priceDESC') }}</option>
                 </select>
                 <select name="liquorType" class="btn btn-primary">
-                    <option value='NA'>Select</option>
+                    <option value='NA'>{{ __('messages.liquor.select') }}</option>
                     @foreach ($viewData['liquorTypes'] as $liquor)
                         <option value='{{ $liquor->getLiquorType() }}'>{{ $liquor->getLiquorType() }}</option>
                     @endforeach
                 </select>
-                <input type="submit" class="btn btn-primary" value="Send" />
+                <input type="submit" class="btn btn-primary" value="{{ __('messages.liquor.send') }}" />
             </div>
         </form>
         @if (session()->has('alert'))
